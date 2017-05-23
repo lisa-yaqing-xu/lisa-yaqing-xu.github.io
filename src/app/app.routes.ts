@@ -5,8 +5,9 @@ import { CodeComponent } from './view/code/code.component';
 import { ArtComponent } from './view/art/art.component';
 import { ResumeComponent } from './view/resume/resume.component';
 
+console.log('route');
 export const appRoutes: Routes = [
-  {path: 'test', component: MainComponent}
+  {path: '', component: MainComponent}
   /*{path: '', component: MainViewComponent},
   {
     path: 'projects', component: ProjectDataViewComponent,
