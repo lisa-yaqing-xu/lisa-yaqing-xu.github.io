@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-main',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-
-  constructor() { }
+  subPages: Array<string>;
+  constructor(private router: Router) {
+    let routerObj = this.router.config[0].children;
+    this.subPages = routerObj
+      .filter(route => !route.redirectTo)
+      .map(route => route.path);
+  }
 
   ngOnInit() {
   }

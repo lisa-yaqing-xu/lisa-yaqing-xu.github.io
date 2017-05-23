@@ -1,3 +1,10 @@
-<p>
-  main works!
-</p>
+
+  <div>
+    <ul>
+      <li *ngFor="let route of subPages">
+        <a [routerLink]="['/'+route]">{{route}}</a>
+      </li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+
