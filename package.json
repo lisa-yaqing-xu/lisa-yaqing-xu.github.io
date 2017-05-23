@@ -9,7 +9,8 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "rebuild": "bash build.sh"
+    "rebuild": "bash build.sh",
+    "repo": "bash deploy.sh"
   },
   "private": true,
   "dependencies": {
