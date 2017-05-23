@@ -9,7 +9,7 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "deploy": "ng build --prod && cp CNAME dist && git add . && git commit -m 'build' && git push origin development && git subtree push --prefix dist origin master"
+    "deploy": "bash deploy.sh"
   },
   "private": true,
   "dependencies": {
