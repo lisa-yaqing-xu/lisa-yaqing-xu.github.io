@@ -7,7 +7,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  subPages: Array<string>;
+  subPages: Array<string> = [];
   constructor(private router: Router) {
     let routerObj = this.router.config[0].children;
     this.subPages = routerObj

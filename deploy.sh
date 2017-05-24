@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ng build --prod
 cp CNAME dist
 cp dist/index.html dist/404.html

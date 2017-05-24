@@ -1,0 +1,12 @@
+<div class="lx-header">
+  <div class="lx-info">
+    <div class="lx-logo"></div>
+    <h1>Yaqing (Lisa) Xu</h1>
+    <h4>Software Engineer &middot; Artist</h4>
+  </div>
+  <ul class="lx-nav">
+    <li *ngFor="let route of routes">
+      <a [routerLink]="['/'+route]" [routerLinkActive]="['active']">{{route}}</a>
+    </li>
+  </ul>
+</div>

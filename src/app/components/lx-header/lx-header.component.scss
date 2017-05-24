@@ -1,0 +1,106 @@
+@import '../../styles/variables.scss';
+
+$background-color: $almost-black-blue;
+$hyperlink-color: $ice-blue;
+$hyperlink-active-color: $electric-blue;
+$hyperlink-hover-color: $light-purple;
+$hyperlink-hover-active-color: $lavender;
+$transition-speed: .5s;
+$large-img-radius: 200px;
+$med-img-radius: 150px;
+$small-img-radius: 30px;
+
+a {
+  text-decoration: none;
+  color: $hyperlink-color;
+  transition: color $transition-speed;
+
+  &.active, &:active, &:focus {
+    color: $hyperlink-active-color;
+
+    &:hover {
+      color: $hyperlink-hover-active-color;
+    }
+  }
+
+  &:hover {
+    color: $hyperlink-hover-color;
+  }
+}
+
+.lx-header {
+  position:relative;
+  width: 100%;
+  background: $background-color;
+  padding-bottom: 10px;
+
+  .lx-info{
+    width:100%;
+    padding: 75px 0 25px;
+    text-align: center;
+    h1{
+      margin: 15px 0 5px;
+    }
+    h4{
+      margin: 3px 0;
+    }
+
+  }
+  .lx-logo{
+    margin: 0 auto;
+    width: $large-img-radius;
+    height: $large-img-radius;
+    border: 3px solid $electric-blue;
+    border-radius: $large-img-radius;
+    transition: border-color $transition-speed, width $transition-speed, height $transition-speed;
+    &:hover{
+      border-color: $lavender;
+    }
+  }
+  ul.lx-nav {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 5px auto;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    transition: left $transition-speed, transform $transition-speed;
+    li {
+      display: inline-block;
+      margin: 5px 15px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.lx-header.small{
+  height: 43px;
+  padding: 0;
+  & > *{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .lx-info{
+    padding: 0 5px;
+    display: inline-block;
+    width: auto;
+    h1,h4{display: none;}
+    .lx-logo{
+      width: $small-img-radius;
+      height: $small-img-radius;
+      border-width:1px;
+      border-radius: $small-img-radius;
+    }
+  }
+  ul{
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+

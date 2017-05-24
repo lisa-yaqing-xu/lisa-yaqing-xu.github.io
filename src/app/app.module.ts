@@ -11,6 +11,7 @@ import { AboutComponent } from './view/about/about.component';
 import { CodeComponent } from './view/code/code.component';
 import { ArtComponent } from './view/art/art.component';
 import { ResumeComponent } from './view/resume/resume.component';
+import { LxHeaderComponent } from './components/lx-header/lx-header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ResumeComponent } from './view/resume/resume.component';
     AboutComponent,
     CodeComponent,
     ArtComponent,
-    ResumeComponent
+    ResumeComponent,
+    LxHeaderComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

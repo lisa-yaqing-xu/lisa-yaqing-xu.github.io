@@ -1,11 +1,6 @@
-.header{
-
-  ul{
-    padding: 0;
-    list-style: none;
-    li{
-      display: inline-block;
-      margin: 5px;
-    }
-  }
+.items {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
 }
+
