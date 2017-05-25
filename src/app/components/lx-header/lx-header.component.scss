@@ -40,6 +40,11 @@ a {
     text-align: center;
     h1{
       margin: 15px 0 5px;
+      &:hover{
+        animation-name: color-change;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
     }
     h4{
       margin: 3px 0;
@@ -102,6 +107,11 @@ a {
 }
 
 
-
+@keyframes color-change {
+  0% {color: $light-slate;}
+  33% {color: $electric-blue;}
+  66% {color: $lavender;}
+  100% {color: $light-slate;}
+}
 
 
