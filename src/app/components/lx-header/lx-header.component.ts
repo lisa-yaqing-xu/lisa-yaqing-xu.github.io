@@ -7,9 +7,11 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class LxHeaderComponent implements OnInit {
   @Input() routes: Array<string>;
+  @Input() enableSmall: boolean;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.enableSmall)
   }
 
 }

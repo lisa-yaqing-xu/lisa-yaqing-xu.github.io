@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -10,6 +10,10 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  @HostListener('scroll', ['$event']) onScroll($event) {
+    console.log('scrolling2');
   }
 
 }

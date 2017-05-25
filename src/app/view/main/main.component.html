@@ -1,5 +1,8 @@
-  <app-lx-header [(routes)]="subPages"></app-lx-header>
-  <div class='items'>
+  <div #header [ngClass]="{'pinned': menuCollapsed }">
+    <app-lx-header [(routes)]="subPages" [(enableSmall)]="menuCollapsed">
+    </app-lx-header>
+  </div>
+  <div class='items' [style.padding-top]="getBodyOffset()">
     <router-outlet></router-outlet>
   </div>
 
