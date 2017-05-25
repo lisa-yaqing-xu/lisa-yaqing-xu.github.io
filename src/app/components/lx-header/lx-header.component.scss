@@ -31,7 +31,10 @@ a {
 .lx-header {
   position:relative;
   width: 100%;
+  min-width: 320px;
   background: $background-color;
+  border-bottom: 1px solid transparent;
+  transition: border-color 2s;
   //padding-bottom: 10px;
 
   .lx-info{
@@ -71,7 +74,7 @@ a {
     padding: 0;
     list-style: none;
     font-family: 'Josefin Sans', Sans-Serif;
-    font-size: 26px;
+    font-size: 24px;
     transition: left $transition-speed, transform $transition-speed;
     li {
       display: inline-block;
@@ -84,6 +87,7 @@ a {
 .lx-header.small{
   height: 43px;
   padding: 0;
+  border-bottom: 1px solid $lavender;
   & > *{
     display: inline-block;
     vertical-align: middle;

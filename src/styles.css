@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,700|Josefin+Slab:100');
+/*@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,700|Josefin+Slab:100');*/
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,700|Josefin+Slab:300|Open+Sans');
 
 body{
   margin: 0;
   padding: 0;
   background: #17191c;
   color: #8c9da3;
-  font-family: 'Josefin Slab', Serif;
+  font-family: 'Josefin Slab', Sans-Serif;
 
   font-size:22px;
   font-weight: 100;
