@@ -7,8 +7,8 @@ $hyperlink-hover-color: $light-purple;
 $hyperlink-hover-active-color: $lavender;
 $transition-speed: .5s;
 $large-img-radius: 200px;
-$med-img-radius: 150px;
 $small-img-radius: 30px;
+$small-screen: 480px;
 
 a {
   text-decoration: none;
@@ -73,8 +73,9 @@ a {
     margin: 5px auto;
     padding: 0;
     list-style: none;
+
     font-family: 'Josefin Sans', Sans-Serif;
-    font-size: 24px;
+    font-size: 22px;
     transition: left $transition-speed;
     li {
       display: inline-block;
@@ -93,6 +94,9 @@ a {
     vertical-align: middle;
   }
   .lx-info{
+    @media screen and (max-width: $small-screen) {
+      display: none;
+    }
     padding: 0 5px;
     display: inline-block;
     width: auto;
@@ -105,8 +109,10 @@ a {
     }
   }
   ul{
-    left: 0;
-    transform: translateX(0);
+    @media screen and (min-width: $small-screen) {
+      left: 0;
+      transform: translateX(0);
+    }
   }
 }
 
