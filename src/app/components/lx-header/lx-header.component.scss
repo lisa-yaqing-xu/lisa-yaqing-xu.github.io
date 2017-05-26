@@ -33,7 +33,7 @@ a {
   width: 100%;
   min-width: 320px;
   background: $background-color;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid $lavender;
   transition: border-color 2s;
   //padding-bottom: 10px;
 
@@ -73,7 +73,6 @@ a {
     margin: 5px auto;
     padding: 0;
     list-style: none;
-
     font-family: 'Josefin Sans', Sans-Serif;
     font-size: 22px;
     transition: left $transition-speed;
@@ -88,7 +87,6 @@ a {
 .lx-header.small{
   height: 43px;
   padding: 0;
-  border-bottom: 1px solid $lavender;
   & > *{
     display: inline-block;
     vertical-align: middle;

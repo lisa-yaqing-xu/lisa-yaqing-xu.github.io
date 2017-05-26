@@ -1,2 +1,18 @@
+@import './variables.scss';
 .content{
+  min-width: 320px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.text-purple{
+  color: $lavender;
+}
+
+.text-blue{
+  color: $electric-blue;
+}
+
+.text-salmon{
+
 }
