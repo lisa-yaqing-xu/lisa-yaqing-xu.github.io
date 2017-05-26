@@ -1,4 +1,9 @@
-@import './variables.scss';
+@import 'common';
+
+$hyperlink-color: $lavender;
+$hyperlink-hover-color: $electric-blue;
+$transition-speed: .5s;
+
 .content{
   min-width: 320px;
   width: 60%;
@@ -16,3 +21,14 @@
 .text-salmon{
 
 }
+
+a {
+  text-decoration: none;
+  color: $hyperlink-color;
+  transition: color $transition-speed;
+
+  &:hover {
+    color: $hyperlink-hover-color;
+  }
+}
+

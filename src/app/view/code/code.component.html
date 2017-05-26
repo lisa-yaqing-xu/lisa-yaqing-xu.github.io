@@ -1,3 +1,26 @@
 <div class="content">
-  code works!
+  <section>
+    <img src="assets/ap.png" class="preview">
+    <a href="http://animated-poseur.appspot.com" class="project-link">
+      Animated Poseur
+    </a>
+    <p>
+     A frame animation-focused multi-layer drawing application that initially started as my senior project.
+      Is currently built on the AngularJS framework with JavaEE backend using Google App Engine hosting and database,
+      but I have plans to port it to Angular2+ with Spring Boot in the near future for more up-to-date technology and
+      better maintainability before I implement more features.
+    </p>
+  </section>
+
+  <section>
+    <img src="assets/chan.png" class="preview">
+    <a [routerLink]="['/ChanConvexHull']" class="project-link">
+      Chan Convex Hull Algorithm Implementation
+    </a>
+    <a href="https://github.com/lisa-yaqing-xu/ChanConvexHull"><span class="github-icon"></span></a>
+    <p>
+      An implementation of <a href="https://en.wikipedia.org/wiki/Chan%27s_algorithm">Timothy Chan's convex Hull
+      algorithm</a>, coded and visualized in JavaScript.
+    </p>
+  </section>
 </div>

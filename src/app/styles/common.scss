@@ -4,7 +4,12 @@ $electric-blue: #32b0ee;
 $ice-blue: #97dfec;
 $lavender: #977ad6;
 $light-purple: #dac9ff;
-$light-slate: #8c9da3;
+$light-slate: #adc0c6;
 $slate:#7a8d93;
 $salmon: #ffa5a5;
 
+@mixin section-header{
+  font-size: 1.2em;
+  font-family: 'Josefin Sans', Sans-Serif;
+  font-weight: bold;
+}

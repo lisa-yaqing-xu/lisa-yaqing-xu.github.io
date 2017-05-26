@@ -28,12 +28,11 @@ export class MainComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event) {
-    if(window.pageYOffset > this.headerHeight - 10) this.menuCollapsed = true;
-    else this.menuCollapsed = false;
+    this.menuCollapsed = (window.pageYOffset > this.headerHeight - 43);
   }
 
   getBodyOffset(){
-    if (this.menuCollapsed) return (this.headerHeight + 38) + 'px';
+    if (this.menuCollapsed) return (this.headerHeight + 13) + 'px';
     else return '10px';
   }
 

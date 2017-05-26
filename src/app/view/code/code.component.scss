@@ -1,0 +1,25 @@
+@import '../../styles/common';
+
+section{
+  clear:both;
+  display:block;
+  text-align:center;
+  padding: 20px 0;
+}
+img.preview{
+  width: 75%;
+  max-width: 600px;
+  border: 1px solid #363d3f;
+  display:block;
+  margin: 10px auto;
+}
+
+.project-link{
+  @include section-header;
+}
+
+.github-icon{
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+}

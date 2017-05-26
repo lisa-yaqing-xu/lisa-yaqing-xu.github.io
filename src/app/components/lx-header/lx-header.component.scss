@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../styles/common';
 
 $background-color: $almost-black-blue;
 $hyperlink-color: $ice-blue;
@@ -34,8 +34,6 @@ a {
   min-width: 320px;
   background: $background-color;
   border-bottom: 1px solid $lavender;
-  transition: border-color 2s;
-  //padding-bottom: 10px;
 
   .lx-info{
     width:100%;
@@ -43,11 +41,6 @@ a {
     text-align: center;
     h1{
       margin: 15px 0 5px;
-      &:hover{
-        animation-name: color-change;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-      }
     }
     h4{
       margin: 3px 0;
@@ -75,7 +68,7 @@ a {
     list-style: none;
     font-family: 'Josefin Sans', Sans-Serif;
     font-size: 22px;
-    transition: left $transition-speed;
+    transition: left $transition-speed, transform $transition-speed;
     li {
       display: inline-block;
       margin: 5px 15px;
@@ -112,14 +105,6 @@ a {
       transform: translateX(0);
     }
   }
-}
-
-
-@keyframes color-change {
-  0% {color: $light-slate;}
-  33% {color: $electric-blue;}
-  66% {color: $lavender;}
-  100% {color: $light-slate;}
 }
 
 

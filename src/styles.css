@@ -6,7 +6,7 @@ body{
   margin: 0;
   padding: 0;
   background: #17191c;
-  color: #8c9da3;
+  color: #adc0c6;
   font-family: 'Josefin Slab', Sans-Serif;
 
   font-size:22px;
@@ -15,4 +15,12 @@ body{
 
 h1{
   font-family: 'Josefin Sans', Sans-Serif;
+}
+
+.github-icon{
+  background-image: url('assets/GitHub-Mark-Light-120px-plus.png');
+  background-size: 32px;
+  display:inline-block;
+  width: 32px;
+  height: 32px;
 }
