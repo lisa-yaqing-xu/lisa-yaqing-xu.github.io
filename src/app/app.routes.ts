@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
     ]
   },
   //define all my github.io pages outside of angular here
-  {path:'ChanConvexHull', component:null},
+  {path:'ChanConvexHull', redirectTo: 'http://lisaxu.me/ChanConvexHull',component:null},
   {path:'chanconvexhull', redirectTo: 'ChanConvexHull', pathMatch: 'full'}
 ];
 
