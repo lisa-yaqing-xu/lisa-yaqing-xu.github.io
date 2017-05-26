@@ -12,8 +12,9 @@ export const appRoutes: Routes = [
       {path:'about', component: AboutComponent },
       {path:'code', component: CodeComponent },
       {path:'art', component: ArtComponent },
-      {path:'resume', component: ResumeComponent }
+      {path:'resume', component: ResumeComponent },
     ]
-  }
+  },
+  {path:'ChanConvexHull', component:null}
 ];
 
