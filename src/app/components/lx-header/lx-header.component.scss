@@ -53,6 +53,7 @@ a {
     height: $large-img-radius;
     border: 3px solid $electric-blue;
     border-radius: $large-img-radius;
+    background: $dark-slate-gray;
     transition: border-color $transition-speed, width $transition-speed, height $transition-speed;
     overflow: hidden;
     &:hover{
