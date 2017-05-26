@@ -33,8 +33,7 @@ a {
   width: 100%;
   min-width: 320px;
   background: $background-color;
-  border-bottom: 1px solid transparent;
-  transition: border-color 2s;
+  border-bottom: 1px solid $lavender;
   //padding-bottom: 10px;
 
   .lx-info{
@@ -43,11 +42,6 @@ a {
     text-align: center;
     h1{
       margin: 15px 0 5px;
-      &:hover{
-        animation-name: color-change;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-      }
     }
     h4{
       margin: 3px 0;
@@ -88,7 +82,6 @@ a {
 .lx-header.small{
   height: 43px;
   padding: 0;
-  border-bottom: 1px solid $lavender;
   & > *{
     display: inline-block;
     vertical-align: middle;
@@ -114,14 +107,6 @@ a {
       transform: translateX(0);
     }
   }
-}
-
-
-@keyframes color-change {
-  0% {color: $light-slate;}
-  33% {color: $electric-blue;}
-  66% {color: $lavender;}
-  100% {color: $light-slate;}
 }
 
 
