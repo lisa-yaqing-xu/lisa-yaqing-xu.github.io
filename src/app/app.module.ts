@@ -24,7 +24,7 @@ import { LxHeaderComponent } from './components/lx-header/lx-header.component';
     LxHeaderComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes, {initialNavigation : false}),
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     HttpModule
