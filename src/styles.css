@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,500,700|Josefin+Slab:300');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,700|Josefin+Slab:300,700');
 
 
 body{
@@ -7,14 +7,13 @@ body{
   padding: 0;
   background: #17191c;
   color: #adc0c6;
-  font-family: 'Josefin Slab', Sans-Serif;
-
+  font-family: 'Josefin Slab', sans-serif;
   font-size:22px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 h1{
-  font-family: 'Josefin Sans', Sans-Serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .github-icon{
