@@ -11,7 +11,6 @@ export class LxHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.enableSmall)
   }
 
 }

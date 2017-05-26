@@ -7,3 +7,8 @@ $light-purple: #dac9ff;
 $light-slate: #adc0c6;
 $slate:#7a8d93;
 
+@mixin section-header{
+  font-size: 1.2em;
+  font-family: 'Josefin Sans', Sans-Serif;
+  font-weight: bold;
+}

@@ -16,3 +16,11 @@ body{
 h1{
   font-family: 'Josefin Sans', Sans-Serif;
 }
+
+.github-icon{
+  background-image: url('assets/GitHub-Mark-Light-120px-plus.png');
+  background-size: 32px;
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+}

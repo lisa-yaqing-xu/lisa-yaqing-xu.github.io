@@ -32,7 +32,7 @@ export class MainComponent implements OnInit {
   }
 
   getBodyOffset(){
-    if (this.menuCollapsed) return (this.headerHeight + 43) + 'px';
+    if (this.menuCollapsed) return (this.headerHeight + 13) + 'px';
     else return '10px';
   }
 

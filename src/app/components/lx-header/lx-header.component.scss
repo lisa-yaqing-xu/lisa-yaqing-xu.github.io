@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../styles/common';
 
 $background-color: $almost-black-blue;
 $hyperlink-color: $ice-blue;
@@ -70,7 +70,7 @@ a {
 
     font-family: 'Josefin Sans', Sans-Serif;
     font-size: 22px;
-    transition: left $transition-speed;
+    transition: left $transition-speed, transform $transition-speed;
     li {
       display: inline-block;
       margin: 5px 15px;
