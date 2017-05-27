@@ -9,6 +9,9 @@ $slate:#7a8d93;
 $salmon: #ffa5a5;
 $grilled-salmon: #ea806e;
 
+$small-screen: 480px;
+$med-screen: 720px;
+
 @mixin section-header{
   font-size: 1.2em;
   font-family: 'Josefin Sans', sans-serif;
