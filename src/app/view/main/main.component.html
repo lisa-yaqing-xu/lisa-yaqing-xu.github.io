@@ -1,8 +1,19 @@
-  <div #header [ngClass]="{'pinned': menuCollapsed }">
-    <app-lx-header [(routes)]="subPages" [(enableSmall)]="menuCollapsed">
-    </app-lx-header>
-  </div>
-  <div class='items' [style.padding-top]="getBodyOffset()">
-    <router-outlet></router-outlet>
+  <div class="app-body">
+    <div #header [ngClass]="{'pinned': menuCollapsed }">
+      <app-lx-header [(routes)]="subPages" [(enableSmall)]="menuCollapsed">
+      </app-lx-header>
+    </div>
+    <div class='items' [style.padding-top]="getBodyOffset()">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+      <div class="social-media">
+        <a href='https://github.com/lisa-yaqing-xu' class="github-logo" target="_blank"></a>
+        <a href='https://www.linkedin.com/in/yaqing-lisa-xu-227b3865/' class="linkedin-logo" target="_blank"></a>
+        <span (click)="sendEmail()" class="gmail-logo"></span>
+      </div>
+      <div class="bunbun"></div>
+      <div class="copyright">All rights reserved &copy; {{year}} Yaqing (Lisa) Xu</div>
+    </div>
   </div>
 

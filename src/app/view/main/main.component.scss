@@ -1,3 +1,13 @@
+@import '../../styles/common.scss';
+$footer-height: 250px;
+
+.app-body{
+  color: #adc0c6;
+  position:relative;
+  min-height: 100%;
+  height: auto;
+  padding-bottom: $footer-height;
+}
 .pinned{
   width:100%;
   position: fixed;
@@ -6,7 +16,50 @@
 }
 .items {
   width: 100%;
+  min-height: 300px;
   box-sizing: border-box;
+  background: $dark-slate-gray
 }
 
+.footer{
+  position:absolute;
+  width: 100%;
+  height: $footer-height;
+  bottom: 0;
+  padding-top: 30px;
+  background: $almost-black-blue;
+
+  .social-media{
+    width: 100%;
+    padding: 30px 20% 75px;
+    display: flex;
+    justify-content:space-between;
+    [class$='-logo']{
+      mix-blend-mode: normal;
+      cursor:pointer;
+      @include icon-color-overlay-with-hover($slate, $light-slate);
+    }
+  }
+  .gmail-logo{
+    position:relative;
+    @include icon(32px, '../../../assets/gmail.png');
+  }
+  .linkedin-logo{
+    @include icon(32px, '../../../assets/linkedin.png');
+  }
+  .github-logo{
+    @include icon(32px, '../../../assets/github.png');
+  }
+  .bunbun{
+    @include icon(24px, '../../../assets/bunbunlogo.svg');
+    display:block;
+    margin: 5px auto;
+  }
+  .copyright{
+    margin: 10px;
+    font-size: 13px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+  }
+}
 

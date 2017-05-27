@@ -11,7 +11,8 @@ export class MainComponent implements OnInit {
   menuCollapsed: boolean = false;
   subPages: Array<string> = [];
   headerHeight: number;
-
+  year: number;
+  hiddenAnchor: HTMLElement = this.createHiddenMailer();
 
 
   constructor(private router: Router) {
@@ -20,6 +21,7 @@ export class MainComponent implements OnInit {
     this.subPages = routerObj
       .filter(route => !route.redirectTo)
       .map(route => route.path);
+    this.year = new Date().getFullYear();
   }
 
   ngOnInit() {
@@ -36,7 +38,16 @@ export class MainComponent implements OnInit {
     else return '10px';
   }
 
+  createHiddenMailer(){
+    // yeah if someone really wanted to they can get this out of here
+    // but im trying to at least not have this in the html
+    let hiddenAnchor = document.createElement('a');
+    hiddenAnchor.href = 'mailto:lisa.yaqing.xu@gmail.com';
+    return hiddenAnchor;
+  }
 
-
+  sendEmail(){
+    this.hiddenAnchor.click();
+  }
 
 }
