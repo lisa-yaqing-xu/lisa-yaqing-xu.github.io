@@ -12,6 +12,8 @@ import { CodeComponent } from './view/code/code.component';
 import { ArtComponent } from './view/art/art.component';
 import { ResumeComponent } from './view/resume/resume.component';
 import { LxHeaderComponent } from './components/lx-header/lx-header.component';
+import { LxSkillBarComponent } from './components/lx-skill-bar/lx-skill-bar.component';
+import { LxSkillChartComponent } from './components/lx-skill-chart/lx-skill-chart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LxHeaderComponent } from './components/lx-header/lx-header.component';
     CodeComponent,
     ArtComponent,
     ResumeComponent,
-    LxHeaderComponent
+    LxHeaderComponent,
+    LxSkillBarComponent,
+    LxSkillChartComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

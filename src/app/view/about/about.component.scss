@@ -1,16 +1,14 @@
 @import '../../styles/common.scss';
-
+$timeline-resize-cutoff: 1024px;
+section{
+  margin-bottom: 30px;
+}
 .bunbun-icon {
   height: 150px;
   width: 150px;
-  display: inline-block;
-  vertical-align: middle;
   overflow: hidden;
-  margin-right: 30px;
-  @media screen and (max-width: $med-screen) {
-    margin: 0 auto;
-    display: block;
-  }
+  margin: 0 auto;
+  display: block;
   img {
     width: 100%;
     height: 100%;
@@ -20,17 +18,23 @@
 
 .about-section {
   display: inline-block;
-  width: calc(100% - 180px);
   vertical-align: middle;
-  @media screen and (max-width: $med-screen) {
-    width: 100%;
-  }
+  width: 100%;
 }
 
 .work-exp-list {
+  position:relative;
+  width:100%;
   border-left: 2px solid $slate;
   padding: 0;
   margin-left: 20px;
+
+  @media screen and (min-width: $timeline-resize-cutoff) {
+    width: 50%;
+    left: 50%;
+    margin: 0;
+  }
+
   & > li {
     position:relative;
     list-style: none;
@@ -54,7 +58,26 @@
       font-size: .7em;
       .smaller{
         font-size: .8em;
-
+      }
+    }
+    // edu goes on the other size on larger screens
+    &.edu{
+      @media screen and (min-width: $timeline-resize-cutoff) {
+        margin: 0 50px 30px 20px;
+        left: -100%;
+        text-align: right;
+        &:before{
+          left: auto;
+          right: -64px;
+        }
+        small{
+          border-left: 0;
+          border-right: 1px solid $light-slate;
+          margin-left: 0;
+          padding-left: 0;
+          margin-right: 20px;
+          padding-right: 10px;
+        }
       }
     }
   }
