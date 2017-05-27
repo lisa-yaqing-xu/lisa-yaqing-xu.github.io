@@ -1,7 +1,6 @@
 @import '../../styles/common.scss';
-$timeline-resize-cutoff: 1024px;
 section{
-  margin-bottom: 30px;
+  padding-bottom: 50px;
 }
 .bunbun-icon {
   height: 150px;
@@ -22,63 +21,3 @@ section{
   width: 100%;
 }
 
-.work-exp-list {
-  position:relative;
-  width:100%;
-  border-left: 2px solid $slate;
-  padding: 0;
-  margin-left: 20px;
-
-  @media screen and (min-width: $timeline-resize-cutoff) {
-    width: 50%;
-    left: 50%;
-    margin: 0;
-  }
-
-  & > li {
-    position:relative;
-    list-style: none;
-    margin: 0 20px 30px 50px;
-    &:first-child{
-      padding-top: 20px;
-    }
-    &:last-child{
-      margin-bottom: 0;
-    }
-    &:before {
-      position: absolute;
-      left: -68px;
-      @include icon(32px, '../../../assets/bunface.svg');
-    }
-    small{
-      display:block;
-      margin-left: 20px;
-      padding-left: 10px;
-      border-left: 1px solid $light-slate;
-      font-size: .7em;
-      .smaller{
-        font-size: .8em;
-      }
-    }
-    // edu goes on the other size on larger screens
-    &.edu{
-      @media screen and (min-width: $timeline-resize-cutoff) {
-        margin: 0 50px 30px 20px;
-        left: -100%;
-        text-align: right;
-        &:before{
-          left: auto;
-          right: -64px;
-        }
-        small{
-          border-left: 0;
-          border-right: 1px solid $light-slate;
-          margin-left: 0;
-          padding-left: 0;
-          margin-right: 20px;
-          padding-right: 10px;
-        }
-      }
-    }
-  }
-}

@@ -20,43 +20,17 @@
   </section>
   <section>
     <h3 class="text-center">Skills</h3>
-    <app-lx-skill-chart [(skillList)]="testData"></app-lx-skill-chart>
+    <app-lx-skill-chart [skillList]="generalSkills" [color]="generalSkillsColor"></app-lx-skill-chart>
   </section>
+
+  <section>
+    <h3 class="text-center">Programming Languages</h3>
+    <app-lx-skill-chart [skillList]="programmingLanguages"></app-lx-skill-chart>
+  </section>
+
   <section>
     <h3 class="text-center">Experience</h3>
-    <ul class="work-exp-list">
-      <li class="work">
-        <div class="text-bold text-salmon">Associate Software Engineer</div>
-        <small>CA Technologies, <em>July 2016 - present</em><br>
-          <span class="smaller">Full-Time</span>
-        </small>
-
-      </li>
-      <li class="edu">
-        <div class="text-bold text-ice-blue">M.S. in Computer Science</div>
-        <small>Stony Brook University, <em>August 2015 - May 2016</em><br>
-          <span class="smaller">Grad School</span>
-        </small>
-      </li>
-      <li class="work">
-        <div class="text-bold text-salmon">Senior Research Aide</div>
-        <small>CA Technologies, <em>June 2015 - June 2016</em><br>
-          <span class="smaller">Part-Time/Internship</span>
-        </small>
-      </li>
-      <li class="work">
-        <div class="text-bold text-salmon">Graphic Artist</div>
-        <small>Eduware Inc., <em>October 2014 - February 2015</em><br>
-          <span class="smaller">Part-Time/Internship</span>
-        </small>
-      </li>
-      <li class="edu">
-        <div class="text-bold text-ice-blue">B.S. in Computer Science and Applied Math & Statistics</div>
-        <small>Stony Brook University, <em>August 2011 - May 2015</em><br>
-          <span class="smaller">College</span>
-        </small>
-      </li>
-    </ul>
+    <app-lx-exp-timeline [data]="experience"></app-lx-exp-timeline>
   </section>
 
 </div>

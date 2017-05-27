@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LxSkillChartComponent implements OnInit {
   @Input() skillList: Array<any> = [];
   @Input() activate: boolean = true;
+  @Input() color: string;
+  metrics: Array<String> = ['No.', 'Novice', 'Average', 'Pretty Good', 'Hell Yeah!'];
   constructor() {
 
   }

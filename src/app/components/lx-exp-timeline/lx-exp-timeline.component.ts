@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lx-exp-timeline',
   templateUrl: './lx-exp-timeline.component.html',
-  styleUrls: ['./lx-exp-timeline.component.scss']
+  styleUrls: ['../../styles/body.scss','./lx-exp-timeline.component.scss']
 })
 export class LxExpTimelineComponent implements OnInit {
-
+  @Input() data:any = [];
   constructor() { }
 
   ngOnInit() {

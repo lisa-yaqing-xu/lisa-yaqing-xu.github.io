@@ -8,9 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LxSkillBarComponent implements OnInit {
   @Input() data: any;
   @Input() activate: boolean = true;
+  @Input() color: string;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getCustomColorClass(){
+    return this.color || '';
   }
 
 }

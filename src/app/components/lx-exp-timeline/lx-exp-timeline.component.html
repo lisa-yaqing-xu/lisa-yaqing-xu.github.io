@@ -1,3 +1,8 @@
-<p>
-  lx-exp-timeline works!
-</p>
+<ul class="work-exp-list">
+  <li *ngFor="let exp of data" class="{{exp.type}}">
+    <div class="title">{{exp.title}}</div>
+    <small>{{exp.where}}, <em>{{exp.start}} - {{exp.end}}</em><br>
+      <span class="smaller">{{exp.subtype}}</span>
+    </small>
+  </li>
+</ul>

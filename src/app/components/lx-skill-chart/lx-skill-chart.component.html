@@ -1,7 +1,12 @@
-<div>
+<div class='lx-skill-chart'>
+  <div class="lx-skill-labels">
+    <label class='lx-skill-metric-label' *ngFor="let metricName of metrics">
+      <span>{{metricName}}</span>
+    </label>
+  </div>
   <div class="lx-skill-bars">
     <div class="lx-skill-bar-wrapper" *ngFor="let skill of skillList">
-      <app-lx-skill-bar [data]="skill" [activate]="activate"></app-lx-skill-bar>
+      <app-lx-skill-bar [data]="skill" [activate]="activate" [color]="color"></app-lx-skill-bar>
     </div>
   </div>
 </div>

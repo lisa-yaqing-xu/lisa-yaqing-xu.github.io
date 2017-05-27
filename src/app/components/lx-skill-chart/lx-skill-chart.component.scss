@@ -1,3 +1,53 @@
-.lx-skill-bar-wrapper{
-  margin-bottom: 10px;
+@import '../../styles/common.scss';
+
+.lx-skill-chart{
+  position: relative;
+  padding-right: 16px;
+  overflow: hidden;
 }
+
+.lx-skill-bars{
+  padding-top: 35px;
+}
+
+.lx-skill-bar-wrapper{
+  margin-bottom: 20px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.lx-skill-labels{
+  width:calc(100% - 16px);
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+
+.lx-skill-metric-label{
+  position:relative;
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+  font-size: 14px;
+  text-align: right;
+  span{
+    display: inline-block;
+    width:100%;
+    text-align: center;
+  }
+  &:first-child{
+    width:0px;
+    color: transparent;
+  }
+  &:after{
+    content:'';
+    position: absolute;
+    top: 0;
+    width:0;
+    height: 9999px;
+    border-right: 1px dotted $slate;
+  }
+}
+
+
