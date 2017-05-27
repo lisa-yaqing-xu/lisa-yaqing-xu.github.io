@@ -6,7 +6,10 @@ import {Component, OnInit, HostListener} from '@angular/core';
   styleUrls: ['./about.component.scss', '../../styles/body.scss']
 })
 export class AboutComponent implements OnInit {
-  testData: any = [{name: 'JavaScript', value: 50}];
+  testData: any = [
+    {name: 'JavaScript', value: 99},
+    {name: 'Java', value: 70}
+  ];
   constructor() { }
 
   ngOnInit() {

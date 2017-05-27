@@ -1,1 +1,7 @@
-
+<div>
+  <div class="lx-skill-bars">
+    <div class="lx-skill-bar-wrapper" *ngFor="let skill of skillList">
+      <app-lx-skill-bar [data]="skill" [activate]="activate"></app-lx-skill-bar>
+    </div>
+  </div>
+</div>

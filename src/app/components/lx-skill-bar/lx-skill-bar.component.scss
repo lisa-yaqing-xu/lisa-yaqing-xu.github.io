@@ -1,11 +1,13 @@
 .lx-skill-bar{
   position: relative;
-  height: 15px;
+  height: 20px;
   width:calc(100% - 16px);
   background: rgba(255,255,255,0.2);
   label{
+    line-height: 20px;
     position: absolute;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: bold;
     color: #000;
     top: 50%;
     transform: translateY(-50%);
@@ -13,6 +15,7 @@
   }
 }
 .lx-skill-level{
+  transition: width .5s;
   width: 0;
   height: 100%;
   background: #fcf;

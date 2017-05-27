@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lx-skill-chart',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lx-skill-chart.component.scss']
 })
 export class LxSkillChartComponent implements OnInit {
+  @Input() skillList: Array<any> = [];
+  @Input() activate: boolean = true;
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }
-
+  /*
+  * */
 }

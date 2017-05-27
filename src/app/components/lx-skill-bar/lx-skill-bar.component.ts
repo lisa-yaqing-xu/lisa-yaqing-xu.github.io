@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./lx-skill-bar.component.scss']
 })
 export class LxSkillBarComponent implements OnInit {
-
   @Input() data: any;
+  @Input() activate: boolean = true;
   constructor() { }
 
   ngOnInit() {

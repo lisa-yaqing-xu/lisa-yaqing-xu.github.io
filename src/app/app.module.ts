@@ -14,6 +14,7 @@ import { ResumeComponent } from './view/resume/resume.component';
 import { LxHeaderComponent } from './components/lx-header/lx-header.component';
 import { LxSkillBarComponent } from './components/lx-skill-bar/lx-skill-bar.component';
 import { LxSkillChartComponent } from './components/lx-skill-chart/lx-skill-chart.component';
+import { LxExpTimelineComponent } from './components/lx-exp-timeline/lx-exp-timeline.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LxSkillChartComponent } from './components/lx-skill-chart/lx-skill-char
     ResumeComponent,
     LxHeaderComponent,
     LxSkillBarComponent,
-    LxSkillChartComponent
+    LxSkillChartComponent,
+    LxExpTimelineComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
