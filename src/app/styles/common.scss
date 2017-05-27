@@ -7,9 +7,19 @@ $light-purple: #dac9ff;
 $light-slate: #adc0c6;
 $slate:#7a8d93;
 $salmon: #ffa5a5;
+$grilled-salmon: #ea806e;
 
 @mixin section-header{
   font-size: 1.2em;
-  font-family: 'Josefin Sans', Sans-Serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
+}
+
+@mixin icon($size, $url){
+  content: '';
+  display: inline-block;
+  height: $size;
+  width: $size;
+  background-image: url($url);
+  background-size: $size;
 }

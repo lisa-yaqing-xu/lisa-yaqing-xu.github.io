@@ -1,22 +1,54 @@
 @import '../../styles/common.scss';
 
-.bunbun-icon{
+.bunbun-icon {
   height: 150px;
   width: 150px;
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
   margin-right: 30px;
-  img{
+  img {
     width: 100%;
     height: 100%;
-    transform: scaleX(-1);
     margin-top: 5%;
   }
 }
 
-.about-section{
-  display:inline-block;
+.about-section {
+  display: inline-block;
   width: calc(100% - 180px);
   vertical-align: middle;
+}
+
+.work-exp-list {
+  border-left: 2px solid $slate;
+  padding: 0;
+  margin-left: 20px;
+  & > li {
+    position:relative;
+    list-style: none;
+    margin: 0 20px 30px 50px;
+    &:first-child{
+      padding-top: 20px;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &:before {
+      position: absolute;
+      left: -68px;
+      @include icon(32px, '../../../assets/bunface.svg');
+    }
+    small{
+      display:block;
+      margin-left: 20px;
+      padding-left: 10px;
+      border-left: 1px solid $light-slate;
+      font-size: .7em;
+      .smaller{
+        font-size: .8em;
+
+      }
+    }
+  }
 }

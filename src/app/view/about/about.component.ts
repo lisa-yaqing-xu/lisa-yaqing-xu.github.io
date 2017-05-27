@@ -6,7 +6,6 @@ import {Component, OnInit, HostListener} from '@angular/core';
   styleUrls: ['./about.component.scss', '../../styles/body.scss']
 })
 export class AboutComponent implements OnInit {
-  skills: any = {name: 'Javascript', value: '99'};
   constructor() { }
 
   ngOnInit() {
