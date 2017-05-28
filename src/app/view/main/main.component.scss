@@ -40,16 +40,6 @@ $footer-height: 250px;
       @include icon-color-overlay-with-hover($slate, $light-slate);
     }
   }
-  .gmail-logo{
-    position:relative;
-    @include icon(32px, '../../../assets/gmail.png');
-  }
-  .linkedin-logo{
-    @include icon(32px, '../../../assets/linkedin.png');
-  }
-  .github-logo{
-    @include icon(32px, '../../../assets/github.png');
-  }
   .bunbun{
     @include icon(24px, '../../../assets/bunbunlogo.svg');
     display:block;

@@ -6,7 +6,7 @@ $transition-speed: .5s;
 
 .content{
   min-width: 320px;
-  padding: 0 15px;
+  padding: 30px 15px 0;
   width: 60%;
   margin: 0 auto;
 
@@ -43,3 +43,13 @@ a {
   }
 }
 
+.gmail-logo{
+  position:relative;
+  @include icon(32px, '../../assets/gmail.png');
+}
+.linkedin-logo{
+  @include icon(32px, '../../assets/linkedin.png');
+}
+.github-logo{
+  @include icon(32px, '../../assets/github.png');
+}

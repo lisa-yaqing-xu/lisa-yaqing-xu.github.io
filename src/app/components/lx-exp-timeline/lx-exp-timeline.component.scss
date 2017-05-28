@@ -1,11 +1,16 @@
 @import '../../styles/common.scss';
 $timeline-resize-cutoff: 1024px;
+
 .work-exp-list {
   position:relative;
   width:100%;
   border-left: 2px solid $slate;
   padding: 0;
   margin-left: 20px;
+
+  &.inactive li{
+    opacity: 0;
+  }
 
   @media screen and (min-width: $timeline-resize-cutoff) {
     width: 50%;

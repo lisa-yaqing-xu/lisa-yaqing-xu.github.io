@@ -4,6 +4,8 @@
   position: relative;
   padding-right: 16px;
   overflow: hidden;
+  transition: opacity .5s;
+  &.invis{opacity: 0};
 }
 
 .lx-skill-bars{

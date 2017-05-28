@@ -7,9 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LxExpTimelineComponent implements OnInit {
   @Input() data:any = [];
+  @Input() activate: boolean = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  calculateTransition(index){
+    return `all ${this.data.length * .2}s ${index*.2}s ease-in`;
+  }
+
+  transition(){
+    this.activate = true;
   }
 
 }

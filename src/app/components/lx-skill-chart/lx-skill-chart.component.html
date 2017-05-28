@@ -1,4 +1,4 @@
-<div class='lx-skill-chart'>
+<div class='lx-skill-chart' [ngClass]="{'invis': !activate}">
   <div class="lx-skill-labels">
     <label class='lx-skill-metric-label' *ngFor="let metricName of metrics">
       <span>{{metricName}}</span>
