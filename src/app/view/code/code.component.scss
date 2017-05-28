@@ -5,6 +5,17 @@ section{
   display:block;
   text-align:center;
   padding: 20px 0;
+  .github-logo{
+    @include icon-color-overlay-with-hover($light-slate, #fff);
+    &:before{
+      border-radius: 8px;
+    }
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    mix-blend-mode: normal;
+    cursor:pointer;
+  }
 }
 img.preview{
   width: 75%;
@@ -16,16 +27,7 @@ img.preview{
 
 .project-link{
   @include section-header;
+
 }
 
-.github-logo{
-  @include icon-color-overlay-with-hover($light-slate, #fff);
-  &:before{
-    border-radius: 8px;
-  }
-  width: 16px;
-  height: 16px;
-  background-size: 16px;
-  mix-blend-mode: normal;
-  cursor:pointer;
-}
+
