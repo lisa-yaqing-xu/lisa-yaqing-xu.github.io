@@ -17,8 +17,4 @@ export class LxExpTimelineComponent implements OnInit {
     return `all ${this.data.length * .2}s ${index*.2}s ease-in`;
   }
 
-  transition(){
-    this.activate = true;
-  }
-
 }
