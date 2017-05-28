@@ -1,4 +1,4 @@
-import {Component, OnInit, HostListener} from '@angular/core';
+import {Component, OnInit, HostListener, ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -6,10 +6,18 @@ import {Component, OnInit, HostListener} from '@angular/core';
   styleUrls: ['../../styles/body.scss', './about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  @ViewChild('skillChart') skillChart: ElementRef;
+  @ViewChild('programmingChart') programmingChart: ElementRef;
+  @ViewChild('timeline') timeline: ElementRef;
+
   generalSkillsColor: string = 'salmon';
   generalSkills: any = this.getGeneralSkillValues();
   programmingLanguages: any = this.getProgrammingSkillValues();
   experience: any = this.getExperience();
+
+  skillActivate: boolean = false;
+  programmingActivate: boolean = false;
+  timelineActivate: boolean = false;
 
   constructor() {
   }
@@ -17,9 +25,24 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
   }
 
+
   @HostListener('window:scroll', ['$event'])
   onScroll($event) {
-    //do things like activate animations
+    this.skillActivate = this.getActivateValue(this.skillActivate, this.skillChart);
+    this.programmingActivate = this.getActivateValue(this.programmingActivate, this.programmingChart);
+    this.timelineActivate = this.getActivateValue(this.timelineActivate, this.timeline);
+  }
+
+  getActivateValue(activate, element){
+    if(!activate){
+      let offset = this.getElementTop(element);
+      return (window.pageYOffset > offset + 200);
+    }
+    return activate;
+  }
+
+  getElementTop(element){
+    return element.nativeElement.getBoundingClientRect().top
   }
 
   getGeneralSkillValues() {
@@ -96,5 +119,6 @@ export class AboutComponent implements OnInit {
       }
     ];
   }
+
 
 }

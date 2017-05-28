@@ -18,19 +18,19 @@
       <p><span class="text-blue text-bold">Design.</span> I can do a variety of design work, including UI, logo,
         and even character design. Just give me the specs.</p></div>
   </section>
-  <section>
-    <h3 class="text-center">Skills</h3>
-    <app-lx-skill-chart [skillList]="generalSkills" [color]="generalSkillsColor"></app-lx-skill-chart>
+  <section #skillChart>
+    <h3 class="text-center" >Skills</h3>
+    <app-lx-skill-chart [skillList]="generalSkills" [color]="generalSkillsColor" [activate]="skillActivate"></app-lx-skill-chart>
   </section>
 
-  <section>
-    <h3 class="text-center">Programming Languages</h3>
-    <app-lx-skill-chart [skillList]="programmingLanguages"></app-lx-skill-chart>
+  <section #programmingChart>
+    <h3 class="text-center" >Programming Languages</h3>
+    <app-lx-skill-chart [skillList]="programmingLanguages" [activate]="programmingActivate"></app-lx-skill-chart>
   </section>
 
-  <section>
+  <section #timeline>
     <h3 class="text-center">Experience</h3>
-    <app-lx-exp-timeline [data]="experience"></app-lx-exp-timeline>
+    <app-lx-exp-timeline  [data]="experience"></app-lx-exp-timeline>
   </section>
 
 </div>
