@@ -28,15 +28,15 @@ export class AboutComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll($event) {
-    this.skillActivate = this.getActivateValue(this.skillActivate, this.skillChart);
-    this.programmingActivate = this.getActivateValue(this.programmingActivate, this.programmingChart);
-    this.timelineActivate = this.getActivateValue(this.timelineActivate, this.timeline);
+    this.skillActivate = this.getActivateValue(this.skillActivate, this.skillChart, 150);
+    this.programmingActivate = this.getActivateValue(this.programmingActivate, this.programmingChart, 150);
+    this.timelineActivate = this.getActivateValue(this.timelineActivate, this.timeline, 230);
   }
 
-  getActivateValue(activate, element){
+  getActivateValue(activate, element, elementOffset){
     if(!activate){
       let offset = this.getElementTop(element);
-      return (window.pageYOffset > offset + 230);
+      return (window.pageYOffset > offset + elementOffset);
     }
     return activate;
   }
