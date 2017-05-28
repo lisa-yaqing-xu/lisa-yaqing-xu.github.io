@@ -36,7 +36,7 @@ export class AboutComponent implements OnInit {
   getActivateValue(activate, element){
     if(!activate){
       let offset = this.getElementTop(element);
-      return (window.pageYOffset > offset + 200);
+      return (window.pageYOffset > offset + 230);
     }
     return activate;
   }
