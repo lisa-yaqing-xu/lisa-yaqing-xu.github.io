@@ -1,5 +1,5 @@
 <div class="content">
-  <form [formGroup]="contactForm" (ngSubmit)="submit($event)">
+  <form class='contact-form'[formGroup]="contactForm" (ngSubmit)="submit($event)">
     <input formControlName="name" type="text" placeholder="Name">
     <input formControlName="email" type="email" placeholder="Email">
     <input formControlName="subject" type="text" placeholder="Subject">
