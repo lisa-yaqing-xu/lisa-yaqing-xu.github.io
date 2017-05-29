@@ -49,6 +49,8 @@ a {
   color: $electric-blue;
   transition: all .5s;
   font-family: 'Josefin Sans', sans-serif;
+  background: none;
+  cursor: pointer;
   &:hover{
     color: $lavender;
     border-color: $lavender;

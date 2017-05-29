@@ -1,7 +1,10 @@
 <div class="content">
-  <form method="POST" action="https://formspree.io/lisa.yaqing.xu@gmail.com">
-    <input type="email" name="email" placeholder="Your email">
-    <textarea name="message" placeholder="Your message"></textarea>
-    <button type="submit">Send</button>
+  <form [formGroup]="contactForm" (ngSubmit)="submit($event)">
+    <input formControlName="name" type="text" placeholder="Name">
+    <input formControlName="_replyTo" type="email" placeholder="Email">
+    <input formControlName="subject" type="text" placeholder="Subject">
+    <textarea formControlName="message" placeholder="Message"></textarea>
+
+    <button class="button" type="submit">Send</button>
   </form>
 </div>
