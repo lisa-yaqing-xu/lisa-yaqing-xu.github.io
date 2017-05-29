@@ -1,0 +1,86 @@
+@import '../../styles/common';
+.lx-gallery-wrapper{
+  .lx-gallery-item{
+    position:relative;
+    height:100px;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &:before, &:after{
+      content: '';
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+      background-color: $electric-blue;
+      transition: opacity .5s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    &:before{
+      z-index: 2;
+      mix-blend-mode: soft-light;
+    }
+    &:after{
+      z-index: 3;
+    }
+    &:hover{
+      &:before,&:after{
+        opacity: .75;
+      }
+    }
+    img{
+      height: 100%;
+    }
+  }
+}
+
+.lx-gallery-gloss-over{
+  position:fixed;
+  height: 100%;
+  width:100%;
+  top:0;
+  left:0;
+  z-index: 99999;
+  background-color: rgba(0,0,0,0.9);
+  transition: opacity .5s;
+  &.inactive{
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-height: 80%;
+    max-width: 80%;
+
+  }
+
+  .arrow-left, .arrow-right{
+    position: absolute;
+    height: 80px;
+    width: 33px;
+    top:50%;
+    background: url('../../../assets/arrow.svg') center no-repeat ;
+    background-size: cover;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    transition: opacity .5s;
+    z-index: 2;
+    &:hover{
+      opacity: 0.6;
+    }
+  }
+  .arrow-left{
+    left: 10px;
+  }
+  .arrow-right{
+    transform: translateY(-50%) rotate(180deg);
+    right: 10px;
+  }
+}

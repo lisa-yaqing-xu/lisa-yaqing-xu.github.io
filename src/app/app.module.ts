@@ -16,6 +16,7 @@ import { LxHeaderComponent } from './components/lx-header/lx-header.component';
 import { LxSkillBarComponent } from './components/lx-skill-bar/lx-skill-bar.component';
 import { LxSkillChartComponent } from './components/lx-skill-chart/lx-skill-chart.component';
 import { LxExpTimelineComponent } from './components/lx-exp-timeline/lx-exp-timeline.component';
+import { LxGalleryComponent } from './components/lx-gallery/lx-gallery.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { LxExpTimelineComponent } from './components/lx-exp-timeline/lx-exp-time
     LxSkillBarComponent,
     LxSkillChartComponent,
     LxExpTimelineComponent,
+    LxGalleryComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

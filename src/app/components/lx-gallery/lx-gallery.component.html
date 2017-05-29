@@ -1,0 +1,15 @@
+<div class="lx-gallery-wrapper">
+  <section *ngFor="let section of data, let sectionIndex = index">
+    <h3>{{section.title}}</h3>
+    <div class='lx-gallery-item'
+         *ngFor="let url of section.content, let pieceIndex = index"
+         (click)="showImage(sectionIndex, pieceIndex)">
+      <img src={{url}}>
+    </div>
+  </section>
+</div>
+<div class="lx-gallery-gloss-over" [ngClass]="{'inactive': isHidden()}" (click)="hideImage($event)">
+  <div class="arrow-left" (click)="prevImage()"></div>
+  <div class="arrow-right" (click)="nextImage()"></div>
+  <img *ngIf="!isHidden()" src="{{getSelectedURL()}}">
+</div>
