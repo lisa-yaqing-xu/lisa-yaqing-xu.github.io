@@ -11,8 +11,9 @@ import { Observable } from 'rxjs/Rx';
 export class ContactComponent implements OnInit {
   public contactForm = this.fb.group({
     name: ["", Validators.required],
-    _replyTo: ["", Validators.required],
+    email: ["", Validators.required],
     subject: ["", Validators.required],
+    _gotcha:[""],
     message: ["", Validators.required]
   });
 
