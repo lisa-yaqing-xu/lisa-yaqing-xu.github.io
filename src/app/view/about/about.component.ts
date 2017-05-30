@@ -28,9 +28,10 @@ export class AboutComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll($event) {
-    this.skillActivate = this.getActivateValue(this.skillActivate, this.skillChart, 150);
-    this.programmingActivate = this.getActivateValue(this.programmingActivate, this.programmingChart, 150);
-    this.timelineActivate = this.getActivateValue(this.timelineActivate, this.timeline, 230);
+    let activationHeight = 50;
+    this.skillActivate = this.getActivateValue(this.skillActivate, this.skillChart, activationHeight);
+    this.programmingActivate = this.getActivateValue(this.programmingActivate, this.programmingChart, activationHeight);
+    this.timelineActivate = this.getActivateValue(this.timelineActivate, this.timeline, activationHeight);
   }
 
   getActivateValue(activate, element, elementOffset){
@@ -42,7 +43,7 @@ export class AboutComponent implements OnInit {
   }
 
   getElementTop(element){
-    return element.nativeElement.getBoundingClientRect().top
+    return element.nativeElement.offsetTop;
   }
 
   getGeneralSkillValues() {
