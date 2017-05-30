@@ -10,7 +10,6 @@ export class ArtComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.artData);
   }
 
   getImgPath(name){
