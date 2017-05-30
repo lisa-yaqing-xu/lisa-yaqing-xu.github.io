@@ -14,7 +14,6 @@ export class LxExpTimelineComponent implements OnInit {
   }
 
   calculateTransition(index){
-    return `opacity ${this.data.length * .4}s ${index*.4}s ease-in`;
+    return `opacity ${this.data.length * .3}s ${index*.3}s ease-in`;
   }
-
 }

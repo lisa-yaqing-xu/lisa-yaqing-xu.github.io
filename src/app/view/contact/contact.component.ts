@@ -17,6 +17,8 @@ export class ContactComponent implements OnInit {
     message: ["", Validators.required]
   });
 
+  confirmMessage:string = null;
+
   constructor(private fb: FormBuilder, private http:Http) { }
 
   ngOnInit() {
@@ -27,7 +29,7 @@ export class ContactComponent implements OnInit {
     console.log(this.contactForm.value);
 
     this.http.post('http://formspree.io/lisa.yaqing.xu@gmail.com', this.contactForm.value).subscribe((resp)=>{
-      console.log('test');
+      this.confirmMessage = 'Your message has been sent.'
     });
   }
 
