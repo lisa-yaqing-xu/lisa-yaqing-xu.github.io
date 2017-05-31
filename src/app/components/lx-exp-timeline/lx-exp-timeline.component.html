@@ -1,8 +1,0 @@
-<ul class="work-exp-list" [ngClass]="{'inactive': !activate}">
-  <li *ngFor="let exp of data, let i = index" class="{{exp.type}}" [ngStyle]="{'transition':calculateTransition(i) }">
-    <div class="title">{{exp.title}}</div>
-    <small>{{exp.where}}, <em>{{exp.start}} - {{exp.end}}</em><br>
-      <span class="smaller">{{exp.subtype}}</span>
-    </small>
-  </li>
-</ul>
