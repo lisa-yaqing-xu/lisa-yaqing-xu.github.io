@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-ng build --prod
-cp CNAME dist
-cp dist/index.html dist/404.html
+ng build
+mkdir -p docs || exit 1
+cp -a dist/lisa-personal-site/. docs
+cp CNAME docs/CNAME
+cp docs/index.html docs/404.html
 
 git add .
-git commit -m 'build'
-git push origin :deploy --force
-git subtree push --prefix dist origin deploy
+git commit -m 'build for deploy'
