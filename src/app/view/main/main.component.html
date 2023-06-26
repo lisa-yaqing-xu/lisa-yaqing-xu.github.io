@@ -1,0 +1,22 @@
+<section class="lx-main__section lx-main__about">
+    <h2>About Me</h2>
+    <p><span class="lx-main__blue">Hi, I'm Lisa, </span>a software developer with a strong interest in visual development. I have been working as a frontend developer for the majority of my career, though I've worked in other parts of the techstack when needs arise. I am passionate about UI, and I am similarly interested in other visual tech, such as computer graphics. </p>
+
+    <p><span class="lx-main__blue">Ever since I was a kid</span> I was interested in both art and math. I pursued computers science in school, but I kept up my art at the same time, and have even worked as an artist for a time. I've since come to the conclusion that I like doing programming as a job more than art, but I'm most drawn to the kind of programming that'll make things look good, as an artist. </p>
+
+    <p><span class="lx-main__blue">So what can I do?</span> Programming front-end applications is my field of expertise--I can architect the whole client-side application and also make it look good. I can also do server-side code--or really anything with code, I'm pretty flexible in that department. I can effectively communicate with designers on whether a design is reasonable to make--including amount of effort, but also if the user would feel good using it. I can also come up with intermediary design states if not provided for breakpoints, and really, I can do my own UI design entirely if there aren't dedicated designers for that. I designed this site after all. I can also sketch designs and fully render illustrations, in both digital and physical media.</p>
+</section>
+
+<section class="lx-main__section lx-main__bunny">
+    <img src="assets/bunbunputer.png">
+</section>
+
+<section #timeline class="lx-main__section" >
+    <h2>Experience</h2>
+    <app-timeline class="lx-main__timeline" [data]="experience" [activate]="timelineActivate"></app-timeline>
+</section>
+
+<section #skillChart class="lx-main__section">
+    <h2>Skills</h2>
+    <app-skill-chart class="lx-main__skill-chart" [skillList]="skills" [activate]="skillActivate"></app-skill-chart>
+</section>

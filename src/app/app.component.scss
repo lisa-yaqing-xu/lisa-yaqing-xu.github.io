@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    flex-direction: column; 
+    min-height: 100%;
+}
+.lx-app__header{
+    z-index: 2;
+}
+
+.lx-app__main {
+    padding: 12px;
+    flex: 1;
+}
+
+.lx-header.lx-header--collapsed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.lx-app__main--header-collapsed {
+    margin-top: var(--lx-header-height);
+}

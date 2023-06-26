@@ -1,0 +1,37 @@
+@import 'mixins';
+
+.lx-skill-bar{
+  position: relative;
+  height: 20px;
+  width:100%;
+  background: rgba(255,255,255,0.2);
+  label{
+    margin-top:1px;
+    line-height: 20px;
+    position: absolute;
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--lx-black-blue);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    z-index: 2;
+  }
+}
+.lx-skill-level{
+  position:relative;
+  transition: width 1.2s;
+  width: 0;
+  height: 100%;
+  background: var(--lx-electric-blue);
+  &.salmon{
+    background: var(--lx-salmon);
+  }
+  &:after{
+    position: absolute;
+    right: -16px;
+    top: -12px;
+    content: '';
+    @include icon-image('/assets/bunface.svg');
+  }
+}

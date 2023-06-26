@@ -1,0 +1,17 @@
+@import 'mixins';
+
+.lx-icon__bunbun{
+    @include icon-image('/assets/bunbunlogo.svg', 24px);
+}
+
+.lx-icon__github{
+    @include icon-svgmask('/assets/github.png');
+}
+
+.lx-icon__linkedin{
+    @include icon-svgmask('/assets/linkedin.png');
+}
+
+.lx-icon__gmail{
+    @include icon-svgmask('/assets/gmail.png');
+}

@@ -1,0 +1,25 @@
+:host {
+    display: block;
+    width: 100%;
+    padding: 30px 12px 12px;
+    background: var(--lx-black-blue); 
+}
+
+.lx-footer__socials {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20% 20px;
+}
+
+.lx-footer__go-home{
+    display: flex;
+    justify-content: center;
+}
+
+.lx-footer__copyright {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+}

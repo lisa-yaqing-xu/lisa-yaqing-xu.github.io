@@ -1,0 +1,117 @@
+$large-img-radius: 200px;
+$small-img-radius: 30px;
+$mobile-logo-margin: 12px;
+
+:host {
+    --lx-header-bg: var(--lx-black-blue);
+    --lx-header-border: var(--lx-lavender);
+    --lx-logo-border: var(--lx-electric-blue);
+    --lx-logo-border-hover: var(--lx-lavender);
+    --lx-nav-link: var(--lx-ice-blue);
+    --lx-nav-link-hover: var(--lx-light-purple);
+    --lx-active-nav: var(--lx-electric-blue);
+    --lx-active-nav-hover: var(--lx-lavender);
+
+    display: block;
+    position: sticky;
+    width: 100%;
+    background-color: var(--lx-header-bg);
+    border-bottom: 1px solid var(--lx-header-border);
+    padding-top: 75px;
+}
+
+.lx-header__logo {
+    margin: 0 auto;
+    width: $large-img-radius;
+    height: $large-img-radius;
+    border: 3px solid var(--lx-logo-border);
+    border-radius: $large-img-radius;
+    background: var(--lx-dark-gray);
+    transition: border-color .5s;
+    overflow: hidden;
+
+    &:hover {
+        border-color: var(--lx-logo-border-hover);
+    }
+
+    img {
+        margin-top: 6%;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.lx-header__title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+
+    .lx-header__name {
+        margin: 15px 0 5px;
+    }
+
+    .lx-header__description {
+        margin: 3px 0;
+        font-weight: bold;
+        font-family: var(--lx-serif);
+    }
+}
+
+.lx-header__nav {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    margin:0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    font-family: var(--lx-sans-serif);
+    transition: margin .2s, transform .2s;
+
+    &-item {
+        margin: 0 16px;
+    }
+
+    .lx-header__link {
+        color: var(--lx-nav-link);
+
+        &:hover,
+        &:focus {
+            color: var(--lx-nav-link-hover);
+        }
+
+        &.lx-header__link--active,
+        &:active {
+            color: var(--lx-active-nav);
+
+            &:hover{
+                color: var(--lx-active-nav-hover);
+            }
+        }
+    }
+}
+
+// collapsed version
+// no position absolute version of margin translate: https://stackoverflow.com/a/43431182
+:host(.lx-header--collapsed){
+    display: flex;
+    align-items: center;;
+    height: var(--lx-header-collapsed-height);
+    padding-top: 0;
+    padding-right: calc(#{$small-img-radius} + 2 * #{$mobile-logo-margin});
+    .lx-header__logo{
+        width: $small-img-radius;
+        height: $small-img-radius;
+        min-width: $small-img-radius;
+        min-height: $small-img-radius;
+        border-width: 1px;
+        margin: 0 $mobile-logo-margin;
+    }
+    .lx-header__title{
+        display: none;
+    }
+    .lx-header__nav{
+        margin: 0;
+        transform: translate(0);
+    }
+}

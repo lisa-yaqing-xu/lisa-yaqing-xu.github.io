@@ -1,0 +1,16 @@
+@mixin icon-svgmask($url, $size: 32px) {
+    display: inline-block;
+    mask: url($url) no-repeat;
+    mask-size: contain;
+    background-color: var(--lx-gray);
+    width: $size;
+    height: $size;
+}
+
+@mixin icon-image($url, $size: 32px) {
+    display: inline-block;
+    height: $size;
+    width: $size;
+    background: url($url) no-repeat center;
+    background-size: $size;
+}

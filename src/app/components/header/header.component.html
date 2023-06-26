@@ -1,0 +1,14 @@
+<div class="lx-header__logo">
+    <a [routerLink]="['']"><img src="assets/bunbunlogo.svg"></a>
+</div>
+<div class="lx-header__title">
+    <h1 class="lx-header__name">Lisa Xu</h1>
+    <div class="lx-header__description">Software Engineer &middot; Artist</div>
+</div>
+<ul role="navigation" class="lx-header__nav">
+    <li class="lx-header__nav-item" *ngFor="let route of routes">
+        <a  class="lx-header__link"
+            [routerLink]="route.path"
+            [routerLinkActive]="['lx-header__link--active']">{{route.title}}</a>
+    </li>
+</ul>

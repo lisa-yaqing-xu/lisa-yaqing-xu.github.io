@@ -1,0 +1,16 @@
+<ul class="lx-timeline__list" [ngClass]="{'lx-timeline__list--inactive': !activate}">
+  <li 
+    *ngFor="let experience of data,
+    let i = index" 
+    class="lx-timeline__list-item lx-timeline__{{experience.type}}"
+    [ngStyle]="{'transition':calculateTransition(i) }"
+    >
+    <div class="lx-timeline__where">{{experience.where}}</div>
+    <ng-container *ngFor="let item of experience.position">
+      <div class="lx-timeline__title">{{item.title}}</div>
+      <small><em>{{item.start}} - {{item.end}}</em><br>
+        <span class="smaller">{{item.subtype}}</span>
+      </small>
+    </ng-container>
+  </li>
+</ul>
