@@ -5,6 +5,5 @@ cp dist/index.html dist/404.html
 
 git add .
 git commit -m 'build'
-git push origin development
-git push origin :master
-git subtree push --prefix dist origin master
+git push origin :deploy --force
+git subtree push --prefix dist origin deploy
