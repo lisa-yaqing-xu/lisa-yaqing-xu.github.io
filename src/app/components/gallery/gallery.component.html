@@ -1,16 +1,7 @@
 <ul class="lx-gallery__items">
     <li class="lx-gallery__item" *ngFor="let item of galleryItems; let i = index ">
-        <button class="lx-gallery__launch" (click)="currentIndex = i">
+        <button class="lx-gallery__launch" (click)="onSelect(item, i)">
             <img class="lx-gallery__thumbnail" [attr.src]="item.url"/>
         </button>
     </li>
 </ul>
-<app-gallery-overlay 
-    *ngIf="currentItem" 
-    [currentItem]="currentItem" 
-    [hasNext]="hasNext" 
-    [hasPrevious]="hasPrevious"
-    (prev)="currentIndex = currentIndex - 1"
-    (next)="currentIndex = currentIndex + 1"
-    (close)="currentIndex = undefined">
-</app-gallery-overlay>

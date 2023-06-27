@@ -23,11 +23,13 @@
 }
 
 .lx-gallery-overlay__display {
+    display: flex;
     margin: auto;
     padding: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
     img {
         max-width: 90vw;
         max-height: 90vh;
-        box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
     }
 }
