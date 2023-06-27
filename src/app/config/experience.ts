@@ -10,7 +10,7 @@ export const LXExperience = [
                 subtype: 'Full-Time'
             },
             {
-                start: 'July 2016',
+                start: 'July 2017',
                 end: 'May 2021',
                 title: 'Software Engineer',
                 subtype: 'Full-Time'
