@@ -1,0 +1,5 @@
+<div class="lx-gallery-overlay__backdrop" aria-hidden="true" (click)="close.emit()"></div>
+
+<div class="lx-gallery-overlay__display">
+    <img [attr.src]="currentItem.url" [attr.alt]="currentItem.altText" aria-live="assertive">
+</div>

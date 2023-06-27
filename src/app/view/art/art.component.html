@@ -1,1 +1,8 @@
-<p>art works!</p>
+<!--setup for individual art page-->
+<router-outlet></router-outlet>
+<ng-container *ngIf="!pieceId">
+    <section *ngFor="let section of art">
+        <h2 class="lx-art__section-header">{{section.title}}</h2>
+        <app-gallery [galleryItems]="section.items"></app-gallery>    
+    </section>    
+</ng-container>

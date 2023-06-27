@@ -45,6 +45,9 @@ body {
     overflow: auto;
     background: var(--lx-site-bg);
     color: var(--lx-text);
+    &.overlay-visible{
+        overflow:hidden;
+    }
 }
 
 h1 {

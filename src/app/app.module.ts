@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
 import { SkillChartComponent } from './components/skill-chart/skill-chart.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { GalleryOverlayComponent } from './components/gallery-overlay/gallery-overlay.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SkillChartComponent } from './components/skill-chart/skill-chart.compon
     FooterComponent,
     TimelineComponent,
     SkillBarComponent,
-    SkillChartComponent
+    SkillChartComponent,
+    GalleryComponent,
+    GalleryOverlayComponent
   ],
   imports: [
     BrowserModule,
