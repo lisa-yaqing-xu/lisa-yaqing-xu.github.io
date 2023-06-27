@@ -6,8 +6,13 @@ export interface IGalleryItem{
     description?: string;   
 }
 
-export interface IGallery{
+export interface IGallery{    
     title: string,
     description: string,
     items: IGalleryItem[]
+}
+
+export interface IGallerySelection{
+    index: number, 
+    item: IGalleryItem
 }

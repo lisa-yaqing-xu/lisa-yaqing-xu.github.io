@@ -1,5 +1,5 @@
-import { Component, HostBinding, Input } from '@angular/core';
-import { IGalleryItem } from 'src/app/interfaces/gallery.interface';
+import { Component, HostBinding, Input, Output, EventEmitter } from '@angular/core';
+import { IGalleryItem, IGallerySelection } from 'src/app/interfaces/gallery.interface';
 
 @Component({
   selector: 'app-gallery',
@@ -9,22 +9,9 @@ import { IGalleryItem } from 'src/app/interfaces/gallery.interface';
 export class GalleryComponent {
   @HostBinding('class.lx-gallery') baseClass = true;
   @Input() galleryItems: IGalleryItem[] = [];
-  @Input() set currentIndex(index: number | undefined){
-    if(index == null){
-      this.currentItem = undefined;
-    } else {
-      this.currentItem = this.galleryItems[index];
-      this.hasPrevious = index > 0;
-      this.hasNext = index < this.galleryItems.length - 1;
-    }
-    this._currentIndex = index;
-  };
-  get currentIndex(){
-    return this._currentIndex;
-  }
-  currentItem?: IGalleryItem;
-  hasPrevious = false;
-  hasNext = false;
+  @Output() select = new EventEmitter<IGallerySelection>();
 
-  private _currentIndex?: number;
+  onSelect(item: IGalleryItem, index: number) {
+    this.select.emit({ item, index });
+  }
 }

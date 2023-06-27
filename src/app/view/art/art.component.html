@@ -1,8 +1,17 @@
 <!--setup for individual art page-->
 <router-outlet></router-outlet>
 <ng-container *ngIf="!pieceId">
-    <section *ngFor="let section of art">
+    <section *ngFor="let section of art, let i = index">
         <h2 class="lx-art__section-header">{{section.title}}</h2>
-        <app-gallery [galleryItems]="section.items"></app-gallery>    
-    </section>    
+        <app-gallery [galleryItems]="section.items" (select)="select(i, $event)"></app-gallery>    
+    </section> 
+    <app-gallery-overlay 
+        *ngIf="currentItem" 
+        [currentItem]="currentItem" 
+        [hasNext]="next != null" 
+        [hasPrevious]="prev != null"
+        (prev)="goPrev()"
+        (next)="goNext()"
+        (close)="closeOverlay()">
+    </app-gallery-overlay>   
 </ng-container>
