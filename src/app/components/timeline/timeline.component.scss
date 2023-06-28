@@ -1,5 +1,6 @@
 @import 'mixins';
-$timeline-resize-cutoff: 1024px;
+@import 'breakpoints';
+$timeline-resize-cutoff: $breakpoint-tablet;
 
 .lx-timeline__list {
   position:relative;

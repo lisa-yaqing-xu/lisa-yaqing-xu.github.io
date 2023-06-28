@@ -13,13 +13,9 @@
 
 .lx-gallery-overlay__backdrop {
     position: absolute;
-    background-color: rgba(22, 22, 24, 0.7);
-    height: 100%;
-    width: 100%;
     top: 0;
     left: 0;
     z-index: -1;
-    backdrop-filter: blur(3px);
 }
 
 .lx-gallery-overlay__display {

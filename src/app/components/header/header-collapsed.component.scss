@@ -1,0 +1,48 @@
+@import 'z';
+$small-img-radius: 30px;
+$mobile-logo-margin: 12px;
+
+// collapsed version
+// no position absolute version of margin translate: https://stackoverflow.com/a/43431182
+:host(.lx-header--collapsed) {
+    display: flex;
+    align-items: center;
+    ;
+    height: var(--lx-header-collapsed-height);
+    padding-top: 0;
+    padding-right: calc(#{$small-img-radius} + 2 * #{$mobile-logo-margin});
+
+    .lx-header__logo {
+        width: $small-img-radius;
+        height: $small-img-radius;
+        min-width: $small-img-radius;
+        min-height: $small-img-radius;
+        border-width: 1px;
+        margin: 0 $mobile-logo-margin;
+    }
+
+    .lx-header__title {
+        display: none;
+    }
+
+    .lx-header__nav {
+        margin: 0;
+        transform: translate(0);
+    }  
+    &.lx-header--small{
+        .lx-header__hamburger {
+            display: inline-block;
+        }
+
+        .lx-header__nav {
+            display: none;
+            &--active{
+                display: block; 
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: $z-overlay;
+            }
+        }
+    }
+}

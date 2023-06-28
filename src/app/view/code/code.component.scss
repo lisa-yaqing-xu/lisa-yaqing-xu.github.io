@@ -1,14 +1,26 @@
-:host{
+@import 'breakpoints';
+
+:host {
+    --lx-code-img-border:var(--lx-electric-blue);
     display: block;
 }
-.lx-code__preview{
-    max-width: 700px;
+
+h3 {
+    text-align: center;
 }
-.lx-code__section{
+
+.lx-code__preview {
+    max-width: $breakpoint-mobile;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--lx-code-img-border);
+}
+
+.lx-code__section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto 60px;
-    max-width: 1024px;
+    margin: 0 auto;
+    max-width: $breakpoint-tablet;
     padding: 24px;
 }
