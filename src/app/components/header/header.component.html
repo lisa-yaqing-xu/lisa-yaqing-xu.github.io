@@ -16,12 +16,15 @@
 <ul #navigation
     role="navigation"
     class="lx-header__nav"
-    (click)="hamburgerActive = false"
+    (click)="exitHamburger()"
     [ngClass]="{'lx-overlay': hamburgerActive, 'lx-header__nav--active': hamburgerActive}"
-    [attr.aria-hidden]="smallScreen && !hamburgerActive"
+    [attr.aria-hidden]="smallScreen && !hamburgerActive && menuCollapsed"
     [attr.tabindex]="(smallScreen && !hamburgerActive && menuCollapsed) ? -1 : undefined">
     <li class="lx-header__nav-item" *ngFor="let route of routes">
-        <a class="{{linkClass}}" [routerLink]="route.path"
+        <a 
+            class="{{linkClass}}" 
+            [attr.tabindex]="(smallScreen && !hamburgerActive && menuCollapsed) ? -1 : undefined"
+            [routerLink]="route.path"
             [routerLinkActive]="['lx-header__link--active']">{{route.title}}</a>
     </li>
 </ul>

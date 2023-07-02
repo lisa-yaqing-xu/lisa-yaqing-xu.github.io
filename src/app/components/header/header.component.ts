@@ -17,7 +17,9 @@ export class HeaderComponent {
   @ViewChild('navigation') navigationRef: ElementRef;
 
   @Input() @HostBinding('class.lx-header--collapsed') set menuCollapsed(collapsed: boolean) {
-    this.setFocusForAccessibility(collapsed);
+    if(this.smallScreen){
+      this.setFocusForAccessibility(collapsed)
+    };
     this._menuCollapsed = collapsed;
     if (!collapsed) {
       this.hamburgerActive = false;
@@ -62,8 +64,7 @@ export class HeaderComponent {
   }
 
   @HostListener('document:keydown.escape') escape() {
-    this.hamburgerActive = false;
-    this.hamburgerRef.nativeElement.focus();
+    this.exitHamburger();
   }
 
   constructor(private element: ElementRef, private overlay: OverlayHandlerService) { }
@@ -75,5 +76,10 @@ export class HeaderComponent {
     } if (!collapsed && document.activeElement.classList.contains(this.hamburgerClass)) {
       setTimeout(() => { this.navigationRef.nativeElement.querySelector(`.${this.linkClass}`).focus(); }, 0);
     }
+  }
+
+  exitHamburger(){
+    this.hamburgerActive = false;
+    this.hamburgerRef.nativeElement.focus();
   }
 }
