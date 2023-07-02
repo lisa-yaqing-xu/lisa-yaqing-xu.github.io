@@ -71,8 +71,8 @@ $large-img-radius: 200px;
     transform: translateX(-50%);
     list-style: none;
     font-family: var(--lx-sans-serif);
-    transition: margin .2s, transform .2s;
-
+    transition: margin .2s;
+    
     &-item {
         margin: 0 16px;
     }
