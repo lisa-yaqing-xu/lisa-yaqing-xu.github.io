@@ -17,7 +17,7 @@ export class HeaderComponent {
   @ViewChild('navigation') navigationRef: ElementRef;
 
   @Input() @HostBinding('class.lx-header--collapsed') set menuCollapsed(collapsed: boolean) {
-    if(this.smallScreen){
+    if (this.smallScreen) {
       this.setFocusForAccessibility(collapsed)
     };
     this._menuCollapsed = collapsed;
@@ -31,13 +31,16 @@ export class HeaderComponent {
 
   @Output() hamburgerMenuState = new EventEmitter<boolean>();
   public set hamburgerActive(active: boolean) {
-    if(this._hamburgerActive === active){
+    if (this._hamburgerActive === active) {
       return;
     }
     this._hamburgerActive = active;
     this.hamburgerMenuState.emit(active);
     if (active) {
-      this.overlayData = this.overlay.setup();
+      this.overlayData = this.overlay.setup({
+        baseElement: this.navigationRef,
+        focusTrapElements: [this.hamburgerRef, this.navigationRef]
+      });
     } else {
       this.overlayData?.teardown();
       this.overlayData = null;
@@ -64,7 +67,9 @@ export class HeaderComponent {
   }
 
   @HostListener('document:keydown.escape') escape() {
-    this.exitHamburger();
+    if(this.smallScreen){
+      this.exitHamburger();
+    }
   }
 
   constructor(private element: ElementRef, private overlay: OverlayHandlerService) { }
@@ -78,7 +83,7 @@ export class HeaderComponent {
     }
   }
 
-  exitHamburger(){
+  exitHamburger() {
     this.hamburgerActive = false;
     this.hamburgerRef.nativeElement.focus();
   }
