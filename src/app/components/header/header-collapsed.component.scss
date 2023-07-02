@@ -1,4 +1,5 @@
 @import 'z';
+@import 'breakpoints';
 $small-img-radius: 30px;
 $mobile-logo-margin: 12px;
 
@@ -7,18 +8,17 @@ $mobile-logo-margin: 12px;
 :host(.lx-header--collapsed) {
     display: flex;
     align-items: center;
-    ;
     height: var(--lx-header-collapsed-height);
-    padding-top: 0;
-    padding-right: calc(#{$small-img-radius} + 2 * #{$mobile-logo-margin});
+    padding: 0 calc(#{$small-img-radius} + 2 * #{$mobile-logo-margin});
 
     .lx-header__logo {
+        position: absolute;
+        left: $mobile-logo-margin;
         width: $small-img-radius;
         height: $small-img-radius;
         min-width: $small-img-radius;
         min-height: $small-img-radius;
         border-width: 1px;
-        margin: 0 $mobile-logo-margin;
     }
 
     .lx-header__title {
@@ -28,6 +28,10 @@ $mobile-logo-margin: 12px;
     .lx-header__nav {
         margin: 0;
         transform: translate(0);
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
     }  
     &.lx-header--small{
         .lx-header__hamburger {
