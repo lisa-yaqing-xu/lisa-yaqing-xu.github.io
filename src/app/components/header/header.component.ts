@@ -1,7 +1,8 @@
 import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output, ViewChild } from '@angular/core';
-import { RouteConfig } from 'src/app/config/routes';
-import { IRouteConfigItem } from 'src/app/interfaces/route-config.interface';
-import { OverlayHandler, OverlayHandlerService } from 'src/app/services/overlay-handler.service';
+
+import { IRouteConfigItem } from '../../interfaces/route-config.interface';
+import { OverlayHandler, OverlayHandlerService } from '../../services/overlay-handler.service';
+import { RouteConfig } from '../../config/routes';
 
 @Component({
   selector: 'app-header',
@@ -57,7 +58,7 @@ export class HeaderComponent {
   private _menuCollapsed = false;
   private _hamburgerActive = false;
 
-  private overlayData: OverlayHandler;
+  private overlayData?: OverlayHandler;
   @HostListener('window:resize') onResize() {
     this.smallScreen = window.innerWidth <= this.smallScreenCutoff;
     if (!this.smallScreen) {
@@ -73,9 +74,9 @@ export class HeaderComponent {
 
   setFocusForAccessibility(collapsed: boolean) {
     // settimeouts are to run the focus on next js execution so angular lifecycle happens before it
-    if (collapsed && document.activeElement.classList.contains(this.linkClass)) {
+    if (collapsed && document.activeElement?.classList.contains(this.linkClass)) {
       setTimeout(() => { this.hamburgerRef.nativeElement.focus(); }, 0);
-    } if (!collapsed && document.activeElement.classList.contains(this.hamburgerClass)) {
+    } if (!collapsed && document.activeElement?.classList.contains(this.hamburgerClass)) {
       setTimeout(() => { this.navigationRef.nativeElement.querySelector(`.${this.linkClass}`).focus(); }, 0);
     }
   }

@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, Output, EventEmitter } from '@angular/core';
-import { IGalleryItem, IGallerySelection } from 'src/app/interfaces/gallery.interface';
+import { IGalleryItem, IGallerySelection } from '../../interfaces/gallery.interface';
 
 @Component({
   selector: 'app-gallery',
