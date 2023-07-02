@@ -2,6 +2,7 @@
 
 :host {
     --lx-code-img-border:var(--lx-electric-blue);
+    --lx-code-text-border:var(--lx-lavender);
     display: block;
 }
 
@@ -20,7 +21,11 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 auto 60px;
+    padding-bottom: 24px;
     max-width: $breakpoint-tablet;
-    padding: 24px;
+    border-bottom: 1px solid var(--lx-code-text-border);
+    &:first-of-type, &:last-of-type{
+        border: 0;
+    }
 }

@@ -8,13 +8,13 @@ export const LXGallery: IGallery[] = [
             {
                 title: 'Meteor Strike',
                 name: 'illustration-meteor-strike',
-                altText: 'Ayra, from Fire Emblem 4, about to unleash her signature Meteor Strike on some schmuck out of his league.',
+                altText: '',
                 url: 'assets/art/draw_ayra.png'
             },
             {
                 title: 'Death From Above',
                 name: 'illustration-death-from-above',
-                altText: 'Edward Kenway from Assassin\'s Creed: Black Flag doing an aerial assassination from the mast. ',
+                altText: '',
                 url: 'assets/art/draw_edward.png'
             },
             {
@@ -78,19 +78,19 @@ export const LXGallery: IGallery[] = [
                 url: 'assets/art/design_glamayra.png'
             },
             {
-                title: 'Destin',
+                title: 'Character Design 1',
                 name: 'illustration-destin',
                 altText: '',
                 url: 'assets/art/design_destin.png'
             },
             {
-                title: 'Essa',
+                title: 'Character Design 2',
                 name: 'illustration-essa',
                 altText: '',
                 url: 'assets/art/design_essa.png'
             },
             {
-                title: 'Thyra Unarmored',
+                title: 'Character Design 3',
                 name: 'design-thyra',
                 altText: '',
                 url: 'assets/art/design_thyra1.png',

@@ -11,7 +11,8 @@ export class GalleryComponent {
   @Input() galleryItems: IGalleryItem[] = [];
   @Output() select = new EventEmitter<IGallerySelection>();
 
-  onSelect(item: IGalleryItem, index: number) {
+  onSelect(item: IGalleryItem, index: number, event: Event) {
+    event.preventDefault();
     this.select.emit({ item, index });
   }
 }

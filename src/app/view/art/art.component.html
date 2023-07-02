@@ -1,5 +1,5 @@
 <h2 aria-live="assertive">My Art</h2>
-<section *ngFor="let section of art, let i = index">
+<section class="lx-art__section" *ngFor="let section of art, let i = index">
     <h3 class="lx-art__section-header">{{section.title}}</h3>
     <app-gallery [galleryItems]="section.items" (select)="select(i, $event)"></app-gallery>    
 </section> 

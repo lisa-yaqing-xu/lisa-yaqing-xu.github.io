@@ -1,31 +1,34 @@
-:host{
+$item-size: 150px;
+
+:host {
     --lx-gallery-link-color: var(--lx-electric-blue);
     --lx-gallery-link-hover: var(--lx-lavender);
 }
-.lx-gallery__items{
+
+.lx-gallery__items {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , $item-size);
+    grid-template-rows: repeat(auto-fit, $item-size);
+    gap: 12px;
     padding: 0;
-    margin: 0;
-    
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
 }
 
-.lx-gallery__item{
-    margin: 12px;
-}
-
-.lx-gallery__launch{
-    display: flex;
+.lx-gallery__item {
+    display: inline-flex;
     position: relative;
-    height: 150px;
-    max-width: 100%;
+    height: $item-size;
+    width: $item-size;
     padding: 0;
     background: 0;
     border-radius: 5px;
     overflow: hidden;
-    border: 1px solid var( --lx-gallery-link-color);
-    &::after{
+    border: 1px solid var(--lx-gallery-link-color);
+
+    &::after {
         content: '';
         position: absolute;
         z-index: 2;
@@ -34,25 +37,50 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        background-color: var( --lx-gallery-link-color);
+        background-color: var(--lx-gallery-link-color);
         transition: opacity 0.2s, background-color 0.2s;
-    } 
-    &:hover{
+        pointer-events: none;
+    }
+
+    &:hover {
         border: 1px solid var(--lx-gallery-link-hover);
-        &::after{
+
+        &::after {
             opacity: 0.2;
             mix-blend-mode: color;
-            background-color: var(--lx-gallery-link-hover);;
+            background-color: var(--lx-gallery-link-hover);
         }
+
         cursor: pointer;
+        .lx-gallery__quick-view{
+            display: block;
+        }
     }
 
     @media screen and (max-width:400px) {
         max-width: calc(100vw - 48px);
-        img{ width: 100%;}
     }
 }
 
 .lx-gallery__thumbnail{
-    height: 100%;
+    width: $item-size;
+    height: $item-size;
+    object-fit: cover;
+
+}
+
+.lx-gallery__quick-view {
+    display: none;
+    position: absolute;
+    padding: 6px;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    font-weight: bold;
+    color: var(--lx-gallery-link-color);
+    background-color: rgba(0, 0, 0, 0.7);
+    &:hover{
+        color: var(--lx-gallery-link-hover);
+    }
 }

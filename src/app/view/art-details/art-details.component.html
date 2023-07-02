@@ -1,1 +1,14 @@
-<p>art-details works!</p>
+<section class="lx-art-details__title">
+    <h2 aria-live="assertive">{{title}}</h2>
+</section>
+<section class="lx-art-details__collection">
+    <div class="lx-art-details__piece" *ngFor="let item of items">
+        <img [attr.src]="item.url" [attr.alt]="item.altText">
+    </div>
+</section>
+<section class="lx-art-details__description lx-art-details__text-section">
+     <p *ngFor="let paragraph of description">
+        {{paragraph}}
+     </p>
+     <p *ngIf="!description?.length">No description available.</p>
+</section>
