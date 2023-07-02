@@ -14,6 +14,7 @@ import { SkillChartComponent } from './components/skill-chart/skill-chart.compon
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryOverlayComponent } from './components/gallery-overlay/gallery-overlay.component';
 import { ArtDetailsComponent } from './view/art-details/art-details.component';
+import { ArtPieceComponent } from './components/art-piece/art-piece.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ArtDetailsComponent } from './view/art-details/art-details.component';
     SkillChartComponent,
     GalleryComponent,
     GalleryOverlayComponent,
-    ArtDetailsComponent
+    ArtDetailsComponent,
+    ArtPieceComponent
   ],
   imports: [
     BrowserModule,

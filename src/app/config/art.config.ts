@@ -90,19 +90,23 @@ export const LXGallery: IGallery[] = [
                 url: 'assets/art/design_essa.png'
             },
             {
-                title: 'Character Design 3',
+                title: 'Thyra Unarmored',
                 name: 'design-thyra',
                 altText: '',
                 url: 'assets/art/design_thyra1.png',
+                description: 'Thyra\'s unarmored design. I opted for a sleeveless look to show off her powerful physique. The scarf is tucked into her collar but it\'s actually quite long.',
                 collectionConfig: {
                     title: 'Thyra Designs',
+                    description: `Thyra, or Long Jianxia, is a character from a collaborative original story between me and a few of my friends. This is her design with and without armor.
+                    She's gone through a lot of iterations since 2010, when she was first created. Her base palette has always been black hair with blue clothes, though I've opted to add in a touch of red for contrast and visual interest, and red's association with power fits her character well.`
                 }
             },
             {
                 title: 'Thyra Armored',
                 name: 'design-thyra',
                 altText: '',
-                url: 'assets/art/design_thyra2.png'
+                url: 'assets/art/design_thyra2.png',
+                description: 'Thyra\'s armored design. Although most of the clothes are the same under the armor, she does wear a different, simpler sash instead of her more elaborate belt so that it could fit under the armor. Her scarf has also been pulled out to flow akin to a cape.',
             }
         ]
     },

@@ -1,5 +1,5 @@
 <app-header class="lx-app__header" #header role="banner" [menuCollapsed]="collapsedHeader"></app-header>
-<main class="lx-app__main" [ngClass]="{'lx-app__main--header-collapsed': collapsedHeader}">
+<main id="main" class="lx-app__main" [ngClass]="{'lx-app__main--header-collapsed': collapsedHeader}">
     <router-outlet></router-outlet>
 </main>
 <app-footer class="lx-app__footer" role="contentinfo"></app-footer>
