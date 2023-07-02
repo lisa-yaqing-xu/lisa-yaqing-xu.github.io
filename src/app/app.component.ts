@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Host, HostBinding, HostListener, OnInit, ViewChild } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationEnd, Router } from '@angular/router';
-import { LXGallery } from './config/art';
+import { LXGallery } from './config/art.config';
 
 @Component({
   selector: 'app-root',

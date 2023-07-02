@@ -1,18 +1,14 @@
-<!--setup for individual art page-->
-<router-outlet></router-outlet>
-<ng-container *ngIf="!pieceId">
-    <h2 aria-live="assertive">My Art</h2>
-    <section *ngFor="let section of art, let i = index">
-        <h3 class="lx-art__section-header">{{section.title}}</h3>
-        <app-gallery [galleryItems]="section.items" (select)="select(i, $event)"></app-gallery>    
-    </section> 
-    <app-gallery-overlay 
-        *ngIf="currentItem" 
-        [currentItem]="currentItem" 
-        [hasNext]="next != null" 
-        [hasPrevious]="prev != null"
-        (prev)="goPrev()"
-        (next)="goNext()"
-        (close)="closeOverlay()">
-    </app-gallery-overlay>   
-</ng-container>
+<h2 aria-live="assertive">My Art</h2>
+<section *ngFor="let section of art, let i = index">
+    <h3 class="lx-art__section-header">{{section.title}}</h3>
+    <app-gallery [galleryItems]="section.items" (select)="select(i, $event)"></app-gallery>    
+</section> 
+<app-gallery-overlay 
+    *ngIf="currentItem" 
+    [currentItem]="currentItem" 
+    [hasNext]="next != null" 
+    [hasPrevious]="prev != null"
+    (prev)="goPrev()"
+    (next)="goNext()"
+    (close)="closeOverlay()">
+</app-gallery-overlay>   

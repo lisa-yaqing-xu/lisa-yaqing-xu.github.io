@@ -13,6 +13,7 @@ import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
 import { SkillChartComponent } from './components/skill-chart/skill-chart.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryOverlayComponent } from './components/gallery-overlay/gallery-overlay.component';
+import { ArtDetailsComponent } from './view/art-details/art-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GalleryOverlayComponent } from './components/gallery-overlay/gallery-ov
     SkillBarComponent,
     SkillChartComponent,
     GalleryComponent,
-    GalleryOverlayComponent
+    GalleryOverlayComponent,
+    ArtDetailsComponent
   ],
   imports: [
     BrowserModule,

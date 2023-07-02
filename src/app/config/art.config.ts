@@ -40,7 +40,7 @@ export const LXGallery: IGallery[] = [
                 name: 'illustration-hell-stew-eagles',
                 altText: '',
                 url: 'assets/art/draw_hellstewbert.png'
-            },     
+            },
             {
                 title: 'Carefree Saint',
                 name: 'illustration-carefree-saint',
@@ -70,7 +70,7 @@ export const LXGallery: IGallery[] = [
     {
         title: 'Character Design',
         description: '',
-        items:[
+        items: [
             {
                 title: 'Glamrock Meteor',
                 name: 'illustration-glamrock-meteor',
@@ -91,18 +91,19 @@ export const LXGallery: IGallery[] = [
             },
             {
                 title: 'Thyra Unarmored',
-                name: 'illustration-thyra-unarmored',
+                name: 'design-thyra',
                 altText: '',
-                url: 'assets/art/design_thyra1.png'
+                url: 'assets/art/design_thyra1.png',
+                collectionConfig: {
+                    title: 'Thyra Designs',
+                }
             },
             {
                 title: 'Thyra Armored',
-                name: 'illustration-thyra-armored',
+                name: 'design-thyra',
                 altText: '',
                 url: 'assets/art/design_thyra2.png'
-            },
-
-
+            }
         ]
     },
     {
@@ -123,5 +124,21 @@ export const LXGallery: IGallery[] = [
             }
         ]
     }
-    
+
 ];
+
+export const LXGalleryMap = LXGallery.reduce((mappedItems, section) => {
+    section.items.forEach(item => {
+        const galleryItem = mappedItems[item.name] || { mainItems: [] };
+        if (item.collectionConfig) {
+            galleryItem.data = { title: item.collectionConfig.title, description: item.collectionConfig.description };
+            galleryItem.subItems = item.collectionConfig.additionalItems;
+        }
+        else if (!galleryItem.data) {
+            galleryItem.data = {title: item.title, description: item.description};
+        }
+        galleryItem.mainItems.push(item);
+        mappedItems[item.name] = galleryItem;
+    });
+    return mappedItems;
+}, {});

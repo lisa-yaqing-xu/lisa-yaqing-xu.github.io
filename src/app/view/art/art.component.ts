@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { LXGallery } from 'src/app/config/art';
-import { IGallery, IGalleryItem, IGallerySelection } from 'src/app/interfaces/gallery.interface';
+import { Component} from '@angular/core';
+import { LXGallery } from '../../config/art.config';
+import { IGallery, IGalleryItem, IGallerySelection } from '../../interfaces/gallery.interface';
 @Component({
   selector: 'app-art',
   templateUrl: './art.component.html',
   styleUrls: ['./art.component.scss']
 })
-export class ArtComponent implements OnInit {
-  pieceId?: string; // this is for displaying individual pieces
+export class ArtComponent  {
+  // this is for displaying individual pieces 
   art: IGallery[] = LXGallery;
 
   currentItem?: IGalleryItem;
@@ -17,9 +17,6 @@ export class ArtComponent implements OnInit {
   prev: { index: number, section: number };
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   select(sectionIndex: number, selection: IGallerySelection) {
     this.currentSection = sectionIndex;

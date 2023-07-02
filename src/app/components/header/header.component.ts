@@ -2,7 +2,7 @@ import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, 
 
 import { IRouteConfigItem } from '../../interfaces/route-config.interface';
 import { OverlayHandler, OverlayHandlerService } from '../../services/overlay-handler.service';
-import { RouteConfig } from '../../config/routes';
+import { RouteConfig } from '../../config/routes.config';
 
 @Component({
   selector: 'app-header',

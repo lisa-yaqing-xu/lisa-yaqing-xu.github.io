@@ -10,7 +10,9 @@
     <i class="lx-icon__arrow" aria-hidden="true"></i>
 </button>
 <div class="lx-gallery-overlay__display">
-    <img [attr.src]="currentItem.url" [attr.alt]="currentItem.altText" aria-live="assertive">
+    <a [routerLink]="[currentItem.name]">
+        <img [attr.src]="currentItem.url" [attr.alt]="currentItem.altText" aria-live="assertive">
+    </a>
 </div>
 <button class="lx-button lx-gallery-overlay__navigation lx-gallery-overlay__next"
     *ngIf="hasNext"
