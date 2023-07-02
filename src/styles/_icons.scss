@@ -1,17 +1,74 @@
 @import 'mixins';
 
-.lx-icon__bunbun{
+@mixin animated-icon-24-base{
+    display: block;
+    width: 24px;
+    height: 24px;
+    font-size: 2.4rem;
+    position: relative;
+}
+
+@mixin stick {
+    content: '';
+    width: 100%;
+    height: 15%;
+    background-color: var(--lx-light-gray);
+    position: absolute;
+}
+
+.lx-icon__bunbun {
     @include icon-image('/assets/bunbunlogo.svg', 24px);
 }
 
-.lx-icon__github{
+.lx-icon__github {
     @include icon-svgmask('/assets/github.png');
 }
 
-.lx-icon__linkedin{
+.lx-icon__linkedin {
     @include icon-svgmask('/assets/linkedin.png');
 }
 
-.lx-icon__gmail{
+.lx-icon__gmail {
     @include icon-svgmask('/assets/gmail.png');
 }
+
+
+// animated set, can be used individually, css split to optimize size
+// to animate from hamburger to close and back ADD the close icon on top of hamburger
+// but close is coded so that it can be used by itself
+
+.lx-icon__close, .lx-icon__hamburger{
+    @include animated-icon-24-base();
+    &::before,
+    &::after {
+        @include stick();
+        left: 0;
+        transition: transform .2s ease, top .2s ease;
+    }   
+}
+
+.lx-icon__hamburger{
+    &::before {
+        top: 0;
+        box-shadow: 0 .435em 0 0 var(--lx-light-gray);
+    }
+
+    &::after {
+        top: 100%;
+        transform: translateY(-100%);
+    } 
+}
+
+.lx-icon__close, .lx-icon__hamburger.lx-icon__close {
+    &::before {
+        top: 50%;  
+        transform: translateY(-50%) rotate(45deg); 
+        box-shadow: none;
+    }
+
+    &::after {
+        top: 50%;  
+        transform: translateY(-50%) rotate(-45deg); 
+    }
+}
+

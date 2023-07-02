@@ -28,6 +28,13 @@ $large-img-radius: 200px;
     transition: border-color .5s;
     overflow: hidden;
 
+    a{
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        display: block;
+    }    
+
     &:hover {
         border-color: var(--lx-logo-border-hover);
     }

@@ -5,14 +5,23 @@
     <h1 class="lx-header__name">Lisa Xu</h1>
     <div class="lx-header__description">Software Engineer &middot; Artist</div>
 </div>
-<button class="lx-header__hamburger" *ngIf="smallScreen" (click)="openHamburger()">test</button>
-<ul role="navigation" 
-    class="lx-header__nav" 
-    (click)="closeHamburger()"
-    [ngClass]="{'lx-overlay': smallScreen && hamburgerActive, 'lx-header__nav--active': hamburgerActive}">
+<button #hamburger
+    class="lx-button {{hamburgerClass}}" 
+    [ngClass]="{'lx-header__hamburger--active': hamburgerActive}" 
+    *ngIf="smallScreen" 
+    (click)="hamburgerActive = !hamburgerActive"
+    aria-label="{{hamburgerActive? 'close': 'open'}} navigation menu">
+    <i class="lx-icon__hamburger" [ngClass]="{'lx-icon__close': hamburgerActive}"></i>
+</button>
+<ul #navigation
+    role="navigation"
+    class="lx-header__nav"
+    (click)="hamburgerActive = false"
+    [ngClass]="{'lx-overlay': hamburgerActive, 'lx-header__nav--active': hamburgerActive}"
+    [attr.aria-hidden]="smallScreen && !hamburgerActive"
+    [attr.tabindex]="(smallScreen && !hamburgerActive && menuCollapsed) ? -1 : undefined">
     <li class="lx-header__nav-item" *ngFor="let route of routes">
-        <a  class="lx-header__link"
-            [routerLink]="route.path"
+        <a class="{{linkClass}}" [routerLink]="route.path"
             [routerLinkActive]="['lx-header__link--active']">{{route.title}}</a>
     </li>
 </ul>
