@@ -67,9 +67,7 @@ export class HeaderComponent {
   }
 
   @HostListener('document:keydown.escape') escape() {
-    if(this.smallScreen){
-      this.exitHamburger();
-    }
+    this.exitHamburger();
   }
 
   constructor(private element: ElementRef, private overlay: OverlayHandlerService) { }
@@ -84,7 +82,9 @@ export class HeaderComponent {
   }
 
   exitHamburger() {
-    this.hamburgerActive = false;
-    this.hamburgerRef.nativeElement.focus();
+    if(this.smallScreen && this.menuCollapsed){
+      this.hamburgerActive = false;
+      this.hamburgerRef.nativeElement.focus();
+    }    
   }
 }
