@@ -32,6 +32,10 @@
     @include icon-svgmask('/assets/gmail.png');
 }
 
+.lx-icon__arrow {
+    @include icon-svgmask('/assets/arrow.svg');
+}
+
 
 // animated set, can be used individually, css split to optimize size
 // to animate from hamburger to close and back ADD the close icon on top of hamburger
