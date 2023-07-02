@@ -112,5 +112,7 @@
       }
     }
   },
-  "defaultProject": "LisaPersonalSite"
+  "cli": {
+    "analytics": false
+  }
 }
