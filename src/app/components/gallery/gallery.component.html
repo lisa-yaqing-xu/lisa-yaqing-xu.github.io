@@ -1,7 +1,10 @@
 <ul class="lx-gallery__items">
     <li class="lx-gallery__item" *ngFor="let item of galleryItems; let i = index ">
-        <button class="lx-gallery__launch" (click)="onSelect(item, i)" [attr.aria-label]="'expand image '+item.title">
+        <a class="lx-gallery__launch" [routerLink]="[item.name]">
             <img class="lx-gallery__thumbnail" [attr.src]="item.url" [attr.name]="item.title"/>
+        </a>
+        <button class="lx-button lx-gallery__quick-view" (click)="onSelect(item, i, $event)" [attr.aria-label]="'expand image '+item.title">
+            Quick View
         </button>
     </li>
 </ul>

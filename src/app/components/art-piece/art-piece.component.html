@@ -1,0 +1,16 @@
+<button class="lx-button lx-art-details__individual-display"
+    *ngIf="enableIndividualInfo" aria-label="show individual piece info"
+    (click)="toggleInfo()"
+    (mouseenter)="showInfo = true"
+    (mouseleave)="showInfo = false">
+    i
+</button>
+<div class="lx-art-details__individual-info" [ngClass]="{'lx-art-details__individual-info--active': showInfo}">
+    <h3 *ngIf="item.title" class="lx-art-details__individual-title">
+        {{item.title}}
+    </h3>
+    <div *ngIf="item.description" class="lx-art-details__individual-description">
+        {{item.description}}
+    </div>
+</div>
+<img [attr.src]="item.url" [attr.alt]="item.altText">

@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { LXExperience } from '../../config/experience';
-import { LXSkills } from '../../config/skills';
+import { LXExperience } from '../../config/experience.config';
+import { LXSkills } from '../../config/skills.config';
 
 @Component({
   selector: 'app-main',

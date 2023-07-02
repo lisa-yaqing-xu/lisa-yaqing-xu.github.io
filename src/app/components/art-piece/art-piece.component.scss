@@ -1,0 +1,75 @@
+@import 'breakpoints';
+@import 'mixins';
+@import 'z';
+
+:host{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    @include shadow;
+
+    img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    &:last-child {
+        margin: 0;
+    }
+
+    &:hover{
+        .lx-art-details__individual-display{
+            opacity: 1;
+        }
+    }
+}
+
+
+.lx-art-details__individual-display {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    border: 3px solid var(--lx-light-gray);
+    color: var(--lx-light-gray);
+    top: 2px;
+    right: 2px;
+    z-index: 3;
+    font-size: 1.8rem;
+    opacity: 0;
+    &:hover{
+        border-color: white;
+        color: white;
+    }
+    &:active{
+        border-color: var(--lx-gray);
+        color: var(--lx-gray);
+    }
+}
+
+.lx-art-details__individual-info {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 32px 24px;
+    opacity: 0;
+    pointer-events: none;
+    max-width: 100%;
+    max-height: 100%;
+
+    &--active{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+    .lx-art-details__individual-display{
+        opacity: 1;
+    }
+
+    .lx-art-details__individual-info{
+        font-size: 1.8rem;
+    }
+}

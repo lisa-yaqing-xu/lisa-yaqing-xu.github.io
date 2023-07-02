@@ -1,3 +1,9 @@
+@import 'breakpoints';
+
+.lx-art__section{
+    max-width: $breakpoint-tablet;
+    margin: 0 auto;
+}
 .lx-art__section-header{
     text-align: center;
 }

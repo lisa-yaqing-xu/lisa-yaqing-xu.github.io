@@ -8,13 +8,13 @@ export const LXGallery: IGallery[] = [
             {
                 title: 'Meteor Strike',
                 name: 'illustration-meteor-strike',
-                altText: 'Ayra, from Fire Emblem 4, about to unleash her signature Meteor Strike on some schmuck out of his league.',
+                altText: '',
                 url: 'assets/art/draw_ayra.png'
             },
             {
                 title: 'Death From Above',
                 name: 'illustration-death-from-above',
-                altText: 'Edward Kenway from Assassin\'s Creed: Black Flag doing an aerial assassination from the mast. ',
+                altText: '',
                 url: 'assets/art/draw_edward.png'
             },
             {
@@ -40,7 +40,7 @@ export const LXGallery: IGallery[] = [
                 name: 'illustration-hell-stew-eagles',
                 altText: '',
                 url: 'assets/art/draw_hellstewbert.png'
-            },     
+            },
             {
                 title: 'Carefree Saint',
                 name: 'illustration-carefree-saint',
@@ -70,7 +70,7 @@ export const LXGallery: IGallery[] = [
     {
         title: 'Character Design',
         description: '',
-        items:[
+        items: [
             {
                 title: 'Glamrock Meteor',
                 name: 'illustration-glamrock-meteor',
@@ -78,31 +78,36 @@ export const LXGallery: IGallery[] = [
                 url: 'assets/art/design_glamayra.png'
             },
             {
-                title: 'Destin',
+                title: 'Character Design 1',
                 name: 'illustration-destin',
                 altText: '',
                 url: 'assets/art/design_destin.png'
             },
             {
-                title: 'Essa',
+                title: 'Character Design 2',
                 name: 'illustration-essa',
                 altText: '',
                 url: 'assets/art/design_essa.png'
             },
             {
                 title: 'Thyra Unarmored',
-                name: 'illustration-thyra-unarmored',
+                name: 'design-thyra',
                 altText: '',
-                url: 'assets/art/design_thyra1.png'
+                url: 'assets/art/design_thyra1.png',
+                description: 'Thyra\'s unarmored design. I opted for a sleeveless look to show off her powerful physique. The scarf is tucked into her collar but it\'s actually quite long.',
+                collectionConfig: {
+                    title: 'Thyra Designs',
+                    description: `Thyra, or Long Jianxia, is a character from a collaborative original story between me and a few of my friends. This is her design with and without armor.
+                    She's gone through a lot of iterations since 2010, when she was first created. Her base palette has always been black hair with blue clothes, though I've opted to add in a touch of red for contrast and visual interest, and red's association with power fits her character well.`
+                }
             },
             {
                 title: 'Thyra Armored',
-                name: 'illustration-thyra-armored',
+                name: 'design-thyra',
                 altText: '',
-                url: 'assets/art/design_thyra2.png'
-            },
-
-
+                url: 'assets/art/design_thyra2.png',
+                description: 'Thyra\'s armored design. Although most of the clothes are the same under the armor, she does wear a different, simpler sash instead of her more elaborate belt so that it could fit under the armor. Her scarf has also been pulled out to flow akin to a cape.',
+            }
         ]
     },
     {
@@ -123,5 +128,21 @@ export const LXGallery: IGallery[] = [
             }
         ]
     }
-    
+
 ];
+
+export const LXGalleryMap = LXGallery.reduce((mappedItems, section) => {
+    section.items.forEach(item => {
+        const galleryItem = mappedItems[item.name] || { mainItems: [] };
+        if (item.collectionConfig) {
+            galleryItem.data = { title: item.collectionConfig.title, description: item.collectionConfig.description };
+            galleryItem.subItems = item.collectionConfig.additionalItems;
+        }
+        else if (!galleryItem.data) {
+            galleryItem.data = {title: item.title, description: item.description};
+        }
+        galleryItem.mainItems.push(item);
+        mappedItems[item.name] = galleryItem;
+    });
+    return mappedItems;
+}, {});

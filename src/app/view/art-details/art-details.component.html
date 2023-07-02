@@ -1,0 +1,19 @@
+<section class="lx-art-details__title">
+    <h2 aria-live="assertive">{{title}}</h2>
+</section>
+<section class="lx-art-details__collection">
+    <ng-container  *ngFor="let item of items">
+        <app-art-piece 
+            class="lx-art-details__piece"
+            [item]="item" [enableIndividualInfo]="items.length > 1 && (item.title || item.description)">
+        </app-art-piece>
+    </ng-container>
+</section>
+<section class="lx-art-details__info">
+     <div class="lx-art-details__description">
+        <p *ngFor="let paragraph of description">
+            {{paragraph}}
+         </p>
+         <p *ngIf="!description?.length">No description available.</p>
+     </div>
+</section>
