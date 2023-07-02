@@ -1,8 +1,7 @@
 import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output, ViewChild } from '@angular/core';
 import { RouteConfig } from 'src/app/config/routes';
-import { IOverlay } from 'src/app/interfaces/overlay.interface';
 import { IRouteConfigItem } from 'src/app/interfaces/route-config.interface';
-import { OverlayHandlerService } from 'src/app/services/overlay-handler.service';
+import { OverlayHandler, OverlayHandlerService } from 'src/app/services/overlay-handler.service';
 
 @Component({
   selector: 'app-header',
@@ -58,7 +57,7 @@ export class HeaderComponent {
   private _menuCollapsed = false;
   private _hamburgerActive = false;
 
-  private overlayData: IOverlay;
+  private overlayData: OverlayHandler;
   @HostListener('window:resize') onResize() {
     this.smallScreen = window.innerWidth <= this.smallScreenCutoff;
     if (!this.smallScreen) {

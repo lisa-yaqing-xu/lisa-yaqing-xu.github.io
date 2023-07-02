@@ -1,12 +1,12 @@
 import { ElementRef, Injectable } from '@angular/core';
-import { IOverlay, IOverlayInitData } from '../interfaces/overlay.interface';
+import { IOverlay } from '../interfaces/overlay.interface';
 @Injectable({
   providedIn: 'root'
 })
 export class OverlayHandlerService {
   constructor() { }
 
-  setup(data: IOverlayInitData): OverlayHandler {
+  setup(data: IOverlay): OverlayHandler {
     const overlayHandler = new OverlayHandler(data);
     return overlayHandler;
   }
@@ -25,7 +25,7 @@ export class OverlayHandler {
   private focusTrapParents: ElementRef[];
   private defaultFocusElement: HTMLElement;
 
-  constructor(private data: IOverlayInitData) {
+  constructor(private data: IOverlay) {
     this.baseElement = data.baseElement;
     this.focusTrapParents = data.focusTrapElements;
     this.init();

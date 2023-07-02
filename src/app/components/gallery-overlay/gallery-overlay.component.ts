@@ -1,6 +1,5 @@
 import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { IGalleryItem } from 'src/app/interfaces/gallery.interface';
-import { IOverlay } from 'src/app/interfaces/overlay.interface';
 import { OverlayHandler, OverlayHandlerService } from 'src/app/services/overlay-handler.service';
 
 @Component({

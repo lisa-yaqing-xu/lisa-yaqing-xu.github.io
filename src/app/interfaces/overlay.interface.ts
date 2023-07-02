@@ -1,10 +1,6 @@
 import { ElementRef } from "@angular/core"
 
-export interface IOverlay {
-    teardown: () => void
-}
-
-export interface IOverlayInitData{
+export interface IOverlay{
     baseElement: ElementRef,
     focusTrapElements: ElementRef[], // focus trap elements need to be provided in dom order
     focusElement?: HTMLElement,
