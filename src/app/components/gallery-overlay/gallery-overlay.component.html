@@ -1,5 +1,21 @@
-<div class="lx-gallery-overlay__backdrop" aria-hidden="true" (click)="close.emit()"></div>
-
+<div class="lx-gallery-overlay__backdrop lx-overlay" aria-hidden="true" (click)="close.emit()"></div>
+<button class="lx-button lx-gallery-overlay__exit" aria-label="close gallery" (click)="close.emit()">
+    <i class="lx-icon__close" aria-hidden="true"></i>
+</button>
+<button class="lx-button lx-gallery-overlay__navigation lx-gallery-overlay__prev" 
+    *ngIf="hasPrevious"
+    aria-label="previous image"
+    (click)="prev.emit()"
+>
+    <i class="lx-icon__arrow" aria-hidden="true"></i>
+</button>
 <div class="lx-gallery-overlay__display">
     <img [attr.src]="currentItem.url" [attr.alt]="currentItem.altText" aria-live="assertive">
 </div>
+<button class="lx-button lx-gallery-overlay__navigation lx-gallery-overlay__next"
+    *ngIf="hasNext"
+    aria-label="next image"
+    (click)="next.emit()"
+>
+    <i class="lx-icon__arrow" aria-hidden="true"></i>
+</button>

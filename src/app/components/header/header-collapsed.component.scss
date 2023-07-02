@@ -1,0 +1,88 @@
+@import 'z';
+$small-img-radius: 30px;
+$mobile-logo-margin: 12px;
+
+// collapsed version
+// no position absolute version of margin translate: https://stackoverflow.com/a/43431182
+:host(.lx-header--collapsed) {
+    display: flex;
+    align-items: center;
+    ;
+    height: var(--lx-header-collapsed-height);
+    padding-top: 0;
+    padding-right: calc(#{$small-img-radius} + 2 * #{$mobile-logo-margin});
+
+    .lx-header__logo {
+        width: $small-img-radius;
+        height: $small-img-radius;
+        min-width: $small-img-radius;
+        min-height: $small-img-radius;
+        border-width: 1px;
+        margin: 0 $mobile-logo-margin;
+    }
+
+    .lx-header__title {
+        display: none;
+    }
+
+    .lx-header__nav {
+        margin: 0;
+        transform: translate(0);
+    }  
+    &.lx-header--small{
+        .lx-header__hamburger {
+            display: inline-block;
+            position: fixed; 
+            top: calc(var(--lx-header-collapsed-height) / 2);
+            transform: translateY(-50%);
+            left: $small-img-radius + $mobile-logo-margin * 2;
+            transition: left .2s;
+            &--active{
+                z-index: $z-overlay + 1;
+                left: $mobile-logo-margin + calc(($small-img-radius - 24px) / 2);
+            }
+            &:hover{
+                .lx-icon__close{
+                    &::before,&::after{
+                        background-color: white;
+                    }
+                }
+            }
+            &:active{
+                .lx-icon__close{
+                    &::before,&::after{
+                        background-color: var(--lx-gray);
+                    }
+                }
+            }
+        }
+
+        .lx-header__nav-item{
+            margin-bottom: 16px;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .lx-header__nav {
+            opacity: 0;
+            pointer-events: none;
+            &--active{
+                display: flex; 
+                opacity: 1;
+                pointer-events: unset;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: $z-overlay;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                font-size: 4.8rem;
+                line-height: 4.8rem;
+                .lx-header__nav-item{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

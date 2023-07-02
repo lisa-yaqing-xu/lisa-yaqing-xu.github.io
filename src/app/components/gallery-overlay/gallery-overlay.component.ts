@@ -1,10 +1,12 @@
 import { Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { IGalleryItem } from 'src/app/interfaces/gallery.interface';
+import { IOverlay } from 'src/app/interfaces/overlay.interface';
+import { OverlayHandlerService } from 'src/app/services/overlay-handler.service';
 
 @Component({
   selector: 'app-gallery-overlay',
   templateUrl: './gallery-overlay.component.html',
-  styleUrls: ['./gallery-overlay.component.scss']
+  styleUrls: ['./gallery-overlay.component.scss'],
 })
 export class GalleryOverlayComponent implements OnInit, OnDestroy {
   @Input() currentItem: IGalleryItem;
@@ -18,6 +20,7 @@ export class GalleryOverlayComponent implements OnInit, OnDestroy {
   @HostListener('document:keydown.escape') escape() {
     this.close.emit();
   }
+
   @HostListener('document:keydown.arrowleft') goPrev() {
     if (this.hasPrevious) {
       this.prev.emit();
@@ -30,11 +33,15 @@ export class GalleryOverlayComponent implements OnInit, OnDestroy {
     }
   }
 
+  private overlayData: IOverlay;
+
+  constructor(private overlay: OverlayHandlerService){}
+
   ngOnInit(): void {
-    document.body.classList.add('overlay-visible');
+    this.overlayData = this.overlay.setup();
   }
 
   ngOnDestroy(): void {
-    document.body.classList.remove('overlay-visible');
+    this.overlayData.teardown();
   }
 }
