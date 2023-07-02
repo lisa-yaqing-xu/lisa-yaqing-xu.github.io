@@ -27,6 +27,7 @@ html {
 }
 
 body {
+    --lx-full-bg: var(--lx-black-blue);
     --lx-site-bg: var(--lx-dark-gray);
     --lx-text: var(--lx-light-gray);
     --lx-h2: var(--lx-lavender);
@@ -43,7 +44,7 @@ body {
     min-width: 320px;
     height: 100%;
     overflow: auto;
-    background: var(--lx-site-bg);
+    background: var(--lx-full-bg);
     color: var(--lx-text);
     &.overlay-visible{
         overflow:hidden;
