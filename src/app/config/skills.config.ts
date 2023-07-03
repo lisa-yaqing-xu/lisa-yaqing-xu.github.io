@@ -1,6 +1,8 @@
+import { ISkill } from "../interfaces/skills.interface";
+
 const SALMON = 'salmon';
 
-export const LXSkills = [
+export const LXSkills: ISkill[] = [
     { name: 'JavaScript', value: 98, color: SALMON },
     { name: 'Typescript', value: 92, color: SALMON },
     { name: 'HTML5', value: 95, color: SALMON },

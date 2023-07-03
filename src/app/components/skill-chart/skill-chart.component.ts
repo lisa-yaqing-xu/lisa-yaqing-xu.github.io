@@ -1,4 +1,5 @@
 import { Component, Input, HostBinding } from '@angular/core';
+import { ISkill } from 'src/app/interfaces/skills.interface';
 
 @Component({
   selector: 'app-skill-chart',
@@ -6,7 +7,7 @@ import { Component, Input, HostBinding } from '@angular/core';
   styleUrls: ['./skill-chart.component.scss']
 })
 export class SkillChartComponent {
-  @Input('skillList') set skillList(skillList: any[]) {
+  @Input('skillList') set skillList(skillList: ISkill[]) {
     this._skillList = skillList.map(data => ({ ...data, proficiencyLabel: this.getProficiencyString(data.value)}))
   };
   get skillList(){
