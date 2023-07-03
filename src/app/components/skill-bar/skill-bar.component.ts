@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ISkill } from 'src/app/interfaces/skills.interface';
 
 @Component({
   selector: 'app-skill-bar',
@@ -6,9 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./skill-bar.component.scss']
 })
 export class SkillBarComponent implements OnInit {
-  @Input() data: any;
+  @Input() data: ISkill;
   @Input() activate: boolean = true;
-  @Input() color?: string;
+  @Input() color?: string; 
   constructor() { }
 
   ngOnInit() {

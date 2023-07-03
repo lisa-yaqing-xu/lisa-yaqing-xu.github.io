@@ -46,8 +46,9 @@ body {
     overflow: auto;
     background: var(--lx-full-bg);
     color: var(--lx-text);
-    &.overlay-visible{
-        overflow:hidden;
+
+    &.overlay-visible {
+        overflow: hidden;
     }
 }
 
@@ -63,7 +64,7 @@ h2 {
     text-align: center;
 }
 
-h3{
+h3 {
     font-size: 2.4rem;
 }
 
@@ -80,17 +81,20 @@ a {
         color: var(--lx-a-hover);
     }
 
-    &.lx-icon-link{
-        i{
+    &.lx-icon-link {
+        i {
             transition: background-color .2s;
-            &:hover, &:active, &:focus{
+
+            &:hover,
+            &:active,
+            &:focus {
                 background-color: white;
             }
         }
     }
 }
 
-.lx-button{
+.lx-button {
     display: flex;
     background: 0;
     padding: 0;
@@ -101,10 +105,20 @@ a {
     align-items: center;
 }
 
-.lx-overlay{
+.lx-overlay {
     background-color: rgba(16, 16, 17, 0.8);
     height: 100%;
     width: 100%;
     backdrop-filter: blur(3px);
 }
 
+.lx-visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    display: inline-block;
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+    font-size: 1px;
+    overflow: hidden;
+}

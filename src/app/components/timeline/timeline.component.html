@@ -1,15 +1,16 @@
-<ul class="lx-timeline__list" [ngClass]="{'lx-timeline__list--inactive': !activate}">
+<ul class="lx-timeline__list" [ngClass]="{'lx-timeline__list--inactive': !activate}" aria-label="Experience Timeline">
   <li 
     *ngFor="let experience of data,
     let i = index" 
     class="lx-timeline__list-item lx-timeline__{{experience.type}}"
     [ngStyle]="{'transition':calculateTransition(i) }"
+    [attr.aria-label]="experience.where"
     >
-    <div class="lx-timeline__where">{{experience.where}}</div>
+    <div class="lx-timeline__where" aria-hidden="true">{{experience.where}}</div>
     <ng-container *ngFor="let item of experience.position">
       <div class="lx-timeline__title">{{item.title}}</div>
-      <small><em>{{item.start}} - {{item.end}}</em><br>
-        <span class="smaller">{{item.subtype}}</span>
+      <small><em>{{item.start}} - {{item.end}}</em>
+        <div class="smaller">{{item.subtype}}</div>
       </small>
     </ng-container>
   </li>

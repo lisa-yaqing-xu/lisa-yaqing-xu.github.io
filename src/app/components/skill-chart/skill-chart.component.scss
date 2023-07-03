@@ -12,6 +12,7 @@
 
 .lx-skill-bars{
   padding-top: 35px;
+  margin: 0;
 }
 
 .lx-skill-bar-wrapper{
@@ -40,10 +41,7 @@
     width:100%;
     text-align: center;
   }
-  &:first-child{
-    width:0px;
-    color: transparent;
-  }
+  &:first-child::before,
   &:after{
     content:'';
     position: absolute;
