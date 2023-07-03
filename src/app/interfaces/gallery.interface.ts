@@ -3,6 +3,7 @@ export interface IGallerySubItem { // these don't show up in the main gallery on
     url: string;
     altText: string;
     description?: string;
+    year?: number
 }
 
 export interface IGalleryCollectionConfig {
@@ -18,6 +19,7 @@ export interface IGalleryItem {
     title: string;
     name: string;
     url: string;
+    year?: number;
     altText: string;
     description?: string;
     collectionConfig?: IGalleryCollectionConfig; // having this indicates main item

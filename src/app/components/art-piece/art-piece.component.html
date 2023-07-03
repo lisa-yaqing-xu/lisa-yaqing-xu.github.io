@@ -5,7 +5,9 @@
     (mouseleave)="showInfo = false">
     i
 </button>
-<div class="lx-art-details__individual-info" [ngClass]="{'lx-art-details__individual-info--active': showInfo}">
+<div *ngIf="enableIndividualInfo" 
+    class="lx-art-details__individual-info"
+    [ngClass]="{'lx-art-details__individual-info--active': showInfo}">
     <h3 *ngIf="item.title" class="lx-art-details__individual-title">
         {{item.title}}
     </h3>
