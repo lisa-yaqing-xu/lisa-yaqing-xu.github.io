@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LXGalleryMap } from 'src/app/config/art.config';
+import { RouteConfig } from 'src/app/config/routes.config';
 import { IGalleryItem, IGallerySubItem } from 'src/app/interfaces/gallery.interface';
 
 @Component({
@@ -12,6 +13,7 @@ export class ArtDetailsComponent implements OnInit {
   public title: string = 'Untitled';
   public description: string[] = [];
   public items: (IGalleryItem | IGallerySubItem)[] = [];
+  public backLink = `/${RouteConfig.art.path}`;
   
   constructor() { }
 
