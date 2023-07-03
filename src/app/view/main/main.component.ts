@@ -16,6 +16,8 @@ export class MainComponent {
 
   public skillActivate = false;
   public timelineActivate = false;
+
+  public skillHeaderId = 'lx-skills-header';
   constructor() { }
 
   @HostListener('window:scroll')

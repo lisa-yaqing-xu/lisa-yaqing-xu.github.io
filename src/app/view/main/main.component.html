@@ -17,6 +17,11 @@
 </section>
 
 <section #skillChart class="lx-main__section">
-    <h2>Skills</h2>
-    <app-skill-chart class="lx-main__skill-chart" [skillList]="skills" [activate]="skillActivate"></app-skill-chart>
+    <h2 [id]="skillHeaderId">Skills</h2>
+    <app-skill-chart 
+        class="lx-main__skill-chart" 
+        [skillList]="skills"
+        [activate]="skillActivate"
+        [labelledBy]="skillHeaderId"
+    ></app-skill-chart>
 </section>

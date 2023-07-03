@@ -1,11 +1,11 @@
-<div class="lx-skill-labels">
+<div class="lx-skill-labels" aria-hidden="true">
   <label class='lx-skill-metric-label' *ngFor="let metricName of metrics">
     <span>{{metricName}}</span>
   </label>
 </div>
-<div class="lx-skill-bars">
+<figure class="lx-skill-bars" role="figure" [attr.aria-labelledby]="labelledBy">
   <div class="lx-skill-bar-wrapper" *ngFor="let skill of skillList">
     <app-skill-bar [data]="skill" [activate]="activate" [color]="skill.color || color"></app-skill-bar>
   </div>
-</div>
+</figure>
 

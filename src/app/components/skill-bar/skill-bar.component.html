@@ -1,4 +1,6 @@
 <div class="lx-skill-bar">
-  <label>{{activate?data.name:''}}</label>
-  <div class="lx-skill-level {{getCustomColorClass()}}" [ngStyle]="{'width': activate?data.value + '%':0}"></div>
+  <label>{{activate?data.name:''}} 
+    <span class="lx-visually-hidden">proficiency level: {{data.proficiencyLabel || (data.value + '%')}}</span>
+  </label>
+  <div class="lx-skill-level {{getCustomColorClass()}}" [ngStyle]="{'width': activate ? data.value + '%' : 0}"></div>
 </div>

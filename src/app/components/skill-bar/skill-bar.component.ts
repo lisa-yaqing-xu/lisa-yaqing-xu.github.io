@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SkillBarComponent implements OnInit {
   @Input() data: any;
   @Input() activate: boolean = true;
-  @Input() color?: string;
+  @Input() color?: string; 
   constructor() { }
 
   ngOnInit() {
