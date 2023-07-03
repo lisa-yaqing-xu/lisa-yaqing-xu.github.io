@@ -3,7 +3,11 @@
         <a class="lx-gallery__launch" [routerLink]="[item.name]" [attr.aria-label]="'launch art ' + item.title">
             <img class="lx-gallery__thumbnail" [attr.src]="item.url" [attr.alt]="item.title"/>
         </a>
-        <button class="lx-button lx-gallery__quick-view" (click)="onSelect(item, i, $event)" [attr.aria-label]="'expand image '+item.title">
+        <button 
+            #quickViews
+            class="lx-button lx-gallery__quick-view"
+            (click)="onSelect(item, i, $event)"
+            [attr.aria-label]="'quick view '+item.title">
             Quick View
         </button>
     </li>

@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, Output, EventEmitter } from '@angular/core';
+import { Component, HostBinding, Input, Output, EventEmitter, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { IGalleryItem, IGallerySelection } from '../../interfaces/gallery.interface';
 
 @Component({
@@ -10,6 +10,7 @@ export class GalleryComponent {
   @HostBinding('class.lx-gallery') baseClass = true;
   @Input() galleryItems: IGalleryItem[] = [];
   @Output() select = new EventEmitter<IGallerySelection>();
+  @ViewChildren('quickViews') quickViews: QueryList<ElementRef>;
 
   onSelect(item: IGalleryItem, index: number, event: Event) {
     event.preventDefault();

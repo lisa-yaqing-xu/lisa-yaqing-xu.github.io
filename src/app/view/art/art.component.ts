@@ -1,12 +1,14 @@
-import { Component} from '@angular/core';
+import { Component, QueryList, ViewChildren} from '@angular/core';
 import { LXGallery } from '../../config/art.config';
 import { IGallery, IGalleryItem, IGallerySelection } from '../../interfaces/gallery.interface';
+import { GalleryComponent } from 'src/app/components/gallery/gallery.component';
 @Component({
   selector: 'app-art',
   templateUrl: './art.component.html',
   styleUrls: ['./art.component.scss']
 })
 export class ArtComponent  {
+  @ViewChildren('galleries') galleries: QueryList<GalleryComponent>;
   // this is for displaying individual pieces 
   art: IGallery[] = LXGallery;
 
@@ -75,6 +77,7 @@ export class ArtComponent  {
   }
 
   closeOverlay(){
+    this.galleries.get(this.currentSection).quickViews.get(this.currentIndex).nativeElement.focus();
     this.prev = null;
     this.next = null;
     this.currentIndex = -1;
