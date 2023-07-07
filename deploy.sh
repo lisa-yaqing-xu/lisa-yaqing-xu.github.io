@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 ng build --configuration production
-mkdir -p docs || exit 1
+if [[ -d docs ]]; then
+    rm -rf docs
+fi
+mkdir -p docs
 cp -a dist/lisa-personal-site/. docs
 cp src/favicon.png docs/favicon.png
 cp CNAME docs/CNAME

@@ -163,7 +163,7 @@ export const LXGallery: IGallery[] = [
                 altText: 'A vector image of fat rabbit and an alternate version where it\'s using a computer. They are the logos of this site.',
                 url: 'assets/art/logo_bunbun.png',
                 year: 2017,
-                description: `I love bunnies, and I tend to draw them like a big round blob with years--why not make that my personal brand, but in vector format?`
+                description: `I love bunnies, and I tend to draw them like a big round blob with ears--why not make that my personal brand, but in vector format?`
                 
             },
             {

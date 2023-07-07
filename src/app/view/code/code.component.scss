@@ -3,6 +3,7 @@
 :host {
     --lx-code-img-border:var(--lx-electric-blue);
     --lx-code-text-border:var(--lx-lavender);
+    --lx-code-hover-border: var(--lx-lavender);
     display: block;
 }
 
@@ -13,8 +14,9 @@ h3 {
 .lx-code__preview {
     max-width: $breakpoint-mobile;
     width: 100%;
-    border-radius: 5px;
-    border: 2px solid var(--lx-code-img-border);
+    img{
+        width: 100%;
+    }
 }
 
 .lx-code__section {
