@@ -3,8 +3,6 @@
 $small-img-radius: 30px;
 $mobile-logo-margin: 12px;
 
-// collapsed version
-// no position absolute version of margin translate: https://stackoverflow.com/a/43431182
 :host(.lx-header--collapsed) {
     display: flex;
     align-items: center;
@@ -23,27 +21,16 @@ $mobile-logo-margin: 12px;
 
     .lx-header__title {
         display: none;
-    }
-
-    .lx-header__nav {
-        margin: 0;
-        transform: translate(0);
-        @media screen and (max-width: $breakpoint-mobile) {
-            margin-left: 50%;
-            transform: translateX(-50%);
-        }
-    }  
+    } 
     &.lx-header--small{
         .lx-header__hamburger {
             display: inline-block;
             position: fixed; 
             top: calc(var(--lx-header-collapsed-height) / 2);
             transform: translateY(-50%);
-            left: $small-img-radius + $mobile-logo-margin * 2;
-            transition: left .2s;
+            right: $mobile-logo-margin;
             &--active{
                 z-index: $z-overlay + 1;
-                left: $mobile-logo-margin + calc(($small-img-radius - 24px) / 2);
             }
             &:hover{
                 .lx-icon__close{
