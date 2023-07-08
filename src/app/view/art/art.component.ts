@@ -2,7 +2,7 @@ import { Component, QueryList, ViewChildren } from '@angular/core';
 import { IExpandedGalleryData, IGallery, IGalleryMainItem, IGalleryMap, IGallerySelection } from '../../interfaces/gallery.interface';
 import { GalleryComponent } from 'src/app/components/gallery/gallery.component';
 import { ArtService } from 'src/app/services/art.service';
-import { ActivatedRoute, ActivatedRouteSnapshot, ParamMap, Params, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, NavigationExtras, ParamMap, Params, Router } from '@angular/router';
 import { RouteConfig } from 'src/app/config/routes.config';
 @Component({
   selector: 'app-art',
@@ -15,7 +15,11 @@ export class ArtComponent {
   art: IGallery[];
   private artMap: IGalleryMap;
   private recalculate = true;
-
+  private defaultNavigationExtras: NavigationExtras  = {
+    replaceUrl: true,
+    relativeTo: this.activatedRoute,
+    queryParams: {}
+  };
   currentItem?: IGalleryMainItem;
   currentSection: number = -1;
   currentIndex: number = -1;
@@ -31,19 +35,20 @@ export class ArtComponent {
   }
 
   setFromParams(params: ParamMap) {
-    const title = params.get('title');
+    const name = params.get('name');
     const indexParam = params.get('index');
+    if(name == null && indexParam == null){
+      return;
+    }
     let index: number;
     if (indexParam == null) {
       index = 0;
     } else {
       index = parseInt(indexParam);
     }
-    const piece = title ? this.artMap[title] : null;
+    const piece = name ? this.artMap[name] : null;
     if (!piece || isNaN(index)) {
-      this.router.navigate([RouteConfig.art.path], {
-        replaceUrl: false
-      });
+      this.router.navigate([], this.defaultNavigationExtras);
     } else {
       const selectedPiece: IGalleryMainItem = piece.mainItems[index];
       if (this.recalculate) {
@@ -59,7 +64,7 @@ export class ArtComponent {
   setRoute(sectionIndex: number, itemIndex: number, recalculate = true) {
     this.recalculate = recalculate;
     const item = this.getItemFromArray(sectionIndex, itemIndex);
-    const queryParams = { title: item.name, index: undefined };
+    const queryParams = { name: item.name, index: undefined };
     if (item.index.collection) {
       queryParams.index = item.index.collection;
     }
