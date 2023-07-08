@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, Output, EventEmitter, ViewChildren, ElementRef, QueryList } from '@angular/core';
-import { IGalleryItem, IGallerySelection } from '../../interfaces/gallery.interface';
+import { IGalleryMainItem, IGallerySelection } from '../../interfaces/gallery.interface';
 
 @Component({
   selector: 'app-gallery',
@@ -8,12 +8,16 @@ import { IGalleryItem, IGallerySelection } from '../../interfaces/gallery.interf
 })
 export class GalleryComponent {
   @HostBinding('class.lx-gallery') baseClass = true;
-  @Input() galleryItems: IGalleryItem[] = [];
+  @Input() galleryItems: IGalleryMainItem[] = [];
+  @Input() overrideRouteOnClick = false;
   @Output() select = new EventEmitter<IGallerySelection>();
-  @ViewChildren('quickViews') quickViews: QueryList<ElementRef>;
+  @ViewChildren('link') link: QueryList<ElementRef>;
 
-  onSelect(item: IGalleryItem, index: number, event: Event) {
-    event.preventDefault();
+  onSelect(item: IGalleryMainItem, index: number, event: Event) {
+    if(this.overrideRouteOnClick){
+      event.preventDefault();
+      event.stopPropagation();
+    }
     this.select.emit({ item, index });
   }
 }

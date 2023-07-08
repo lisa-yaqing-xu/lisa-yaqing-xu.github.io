@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LXGalleryMap } from 'src/app/config/art.config';
 import { RouteConfig } from 'src/app/config/routes.config';
-import { IGalleryItem, IGallerySubItem } from 'src/app/interfaces/gallery.interface';
+import { IGalleryMainItem, IGalleryItem } from 'src/app/interfaces/gallery.interface';
 
 @Component({
   selector: 'app-art-details',
@@ -12,7 +12,7 @@ export class ArtDetailsComponent implements OnInit {
   @Input() id?: string;
   public title: string = 'Untitled';
   public description: string[] = [];
-  public items: (IGalleryItem | IGallerySubItem)[] = [];
+  public items: (IGalleryMainItem | IGalleryItem)[] = [];
   public backLink = `/${RouteConfig.art.path}`;
   
   constructor() { }

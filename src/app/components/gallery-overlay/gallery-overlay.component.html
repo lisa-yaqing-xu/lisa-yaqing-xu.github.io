@@ -11,13 +11,18 @@
 </button>
 <div class="lx-gallery-overlay__display">
     <a [routerLink]="[currentItem.name]">
-        <img [attr.src]="currentItem.url" [attr.alt]="currentItem.altText" aria-live="assertive">
+        <app-art-piece
+            [item]="currentItem"
+            [enableIndividualInfo]="true"
+            [aspectRatio]="currentItem.aspectRatio$ | async">
+        </app-art-piece>
+        <!-- <img [attr.src]="currentItem.url" [attr.alt]="currentItem.altText" aria-live="assertive"> -->
     </a>
 </div>
 <button class="lx-button lx-gallery-overlay__navigation lx-gallery-overlay__next"
     *ngIf="hasNext"
     aria-label="next image"
-    (click)="next.emit()"
+    (click)="next.emit()"   
 >
     <i class="lx-icon__arrow" aria-hidden="true"></i>
 </button>

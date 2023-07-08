@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, ElementRef, Host, HostBinding, HostListener, OnInit, ViewChild } from '@angular/core';
-import { HeaderComponent } from './components/header/header.component';
+import { Component, HostBinding, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { LXGallery } from './config/art.config';
+import { ArtService } from './services/art.service';
 
 @Component({
   selector: 'app-root',
@@ -30,17 +29,11 @@ export class AppComponent implements OnInit{
     this.lastScrollPos = window.scrollY;
   }
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private art: ArtService){
+    this.art.loadArt();
+  }
 
   ngOnInit(): void {
-    //preload art to avoid empty buttons blip
-    LXGallery.forEach(category=>{
-      category.items.forEach(item=>{
-        const img = new Image();
-        img.src = item.url;
-      });
-    });
-
     this.router.events.subscribe((event) => {
       if (!(event instanceof NavigationEnd)) {
         return;

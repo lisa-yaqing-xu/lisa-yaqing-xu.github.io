@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IGalleryItem, IGallerySubItem } from 'src/app/interfaces/gallery.interface';
+import { Component, HostBinding, Input } from '@angular/core';
+import { IGalleryMainItem, IGalleryItem } from 'src/app/interfaces/gallery.interface';
 
 @Component({
   selector: 'app-art-piece',
@@ -7,13 +7,16 @@ import { IGalleryItem, IGallerySubItem } from 'src/app/interfaces/gallery.interf
   styleUrls: ['./art-piece.component.scss']
 })
 export class ArtPieceComponent {
-  @Input() item: IGalleryItem | IGallerySubItem;
+  @Input() @HostBinding('style.aspect-ratio') aspectRatio;
+  @Input() item: IGalleryItem;
   @Input() enableIndividualInfo: boolean = false;
-  
+
+  private _item: IGalleryItem;
   showInfo = false;
 
-  toggleInfo(){
+  toggleInfo($event: MouseEvent) {
+    $event.stopPropagation();
+    $event.preventDefault();
     this.showInfo = !this.showInfo;
   }
-
 }
