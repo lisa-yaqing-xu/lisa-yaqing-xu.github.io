@@ -3,7 +3,7 @@
     <h3 class="lx-art__section-header">{{section.title}}</h3>
     <app-gallery #galleries 
         [galleryItems]="section.items"
-        [overrideRouteOnClick]="true"
+        [overrideRouteOnClick]="!smallScreen"
         (select)="select(i, $event)"
     ></app-gallery>    
 </section> 

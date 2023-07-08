@@ -3,6 +3,7 @@ import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, 
 import { IRouteConfigItem } from '../../interfaces/route-config.interface';
 import { OverlayHandler, OverlayHandlerService } from '../../services/overlay-handler.service';
 import { RouteConfig } from '../../config/routes.config';
+import { SMALL_SCREEN } from 'src/app/config/breakpoints';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,20 @@ import { RouteConfig } from '../../config/routes.config';
   styleUrls: ['./header.component.scss', './header-collapsed.component.scss']
 })
 export class HeaderComponent {
-  readonly smallScreenCutoff = 400;
   @HostBinding('class.lx-header') baseClass = true;
-  @HostBinding('class.lx-header--small') smallScreen = window.innerWidth <= this.smallScreenCutoff;
+  @HostBinding('class.lx-header--small') smallScreen = window.innerWidth <= SMALL_SCREEN;
   @ViewChild('hamburger') hamburgerRef: ElementRef;
   @ViewChild('navigation') navigationRef: ElementRef;
+  @HostListener('window:resize') onResize() {
+    this.smallScreen = window.innerWidth <= SMALL_SCREEN;
+    if (!this.smallScreen) {
+      this.hamburgerActive = false;
+    }
+  }
 
+  @HostListener('document:keydown.escape') escape() {
+    this.exitHamburger();
+  }
   @Input() @HostBinding('class.lx-header--collapsed') set menuCollapsed(collapsed: boolean) {
     if (this.smallScreen) {
       this.setFocusForAccessibility(collapsed)
@@ -59,16 +68,6 @@ export class HeaderComponent {
   private _hamburgerActive = false;
 
   private overlayData?: OverlayHandler;
-  @HostListener('window:resize') onResize() {
-    this.smallScreen = window.innerWidth <= this.smallScreenCutoff;
-    if (!this.smallScreen) {
-      this.hamburgerActive = false;
-    }
-  }
-
-  @HostListener('document:keydown.escape') escape() {
-    this.exitHamburger();
-  }
 
   constructor(private element: ElementRef, private overlay: OverlayHandlerService) { }
 

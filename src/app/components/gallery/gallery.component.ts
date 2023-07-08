@@ -14,10 +14,10 @@ export class GalleryComponent {
   @ViewChildren('link') link: QueryList<ElementRef>;
 
   onSelect(item: IGalleryMainItem, index: number, event: Event) {
-    if(this.overrideRouteOnClick){
+    if (this.overrideRouteOnClick) {
       event.preventDefault();
       event.stopPropagation();
+      this.select.emit({ item, index });
     }
-    this.select.emit({ item, index });
   }
 }

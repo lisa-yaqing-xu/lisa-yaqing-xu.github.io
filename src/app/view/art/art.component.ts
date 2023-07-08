@@ -1,9 +1,10 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Component, HostListener, QueryList, ViewChildren } from '@angular/core';
 import { IExpandedGalleryData, IGallery, IGalleryMainItem, IGalleryMap, IGallerySelection } from '../../interfaces/gallery.interface';
 import { GalleryComponent } from 'src/app/components/gallery/gallery.component';
 import { ArtService } from 'src/app/services/art.service';
 import { ActivatedRoute, ActivatedRouteSnapshot, NavigationExtras, ParamMap, Params, Router } from '@angular/router';
 import { RouteConfig } from 'src/app/config/routes.config';
+import { SMALL_SCREEN } from 'src/app/config/breakpoints';
 @Component({
   selector: 'app-art',
   templateUrl: './art.component.html',
@@ -11,8 +12,15 @@ import { RouteConfig } from 'src/app/config/routes.config';
 })
 export class ArtComponent {
   @ViewChildren('galleries') galleries: QueryList<GalleryComponent>;
+  @HostListener('window:resize') onResize() {
+    // THIS IS TEMPORARY
+    // THIS STAYS UNTIL I GET SWIPE WORKING AND THEN IT GOES
+    this.smallScreen = window.innerWidth <= SMALL_SCREEN;
+  }
   // this is for displaying individual pieces 
-  art: IGallery[];
+  public art: IGallery[];
+  public smallScreen = window.innerWidth <= SMALL_SCREEN;
+
   private artMap: IGalleryMap;
   private recalculate = true;
   private defaultNavigationExtras: NavigationExtras  = {
