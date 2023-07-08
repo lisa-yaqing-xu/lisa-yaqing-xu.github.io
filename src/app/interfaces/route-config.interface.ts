@@ -4,5 +4,7 @@ export interface IRouteConfigItem{
 }
 
 export interface IRouteConfig{
-    [key: string]: IRouteConfigItem
+    main: IRouteConfigItem,
+    code: IRouteConfigItem,
+    art: IRouteConfigItem
 }

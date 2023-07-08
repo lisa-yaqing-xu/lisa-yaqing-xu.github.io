@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { IGalleryItem } from '../../interfaces/gallery.interface';
+import { IGalleryMainItem } from '../../interfaces/gallery.interface';
 import { OverlayHandler, OverlayHandlerService } from '../../services/overlay-handler.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { OverlayHandler, OverlayHandlerService } from '../../services/overlay-ha
   styleUrls: ['./gallery-overlay.component.scss'],
 })
 export class GalleryOverlayComponent implements OnInit, OnDestroy, OnChanges {
-  @Input() currentItem: IGalleryItem;
+  @Input() currentItem: IGalleryMainItem;
   @Input() hasPrevious = false;
   @Input() hasNext = false;
   @Output() prev = new EventEmitter<void>();

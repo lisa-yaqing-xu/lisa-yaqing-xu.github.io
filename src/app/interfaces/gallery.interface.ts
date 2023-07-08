@@ -1,34 +1,39 @@
-export interface IGallerySubItem { // these don't show up in the main gallery only expanded views
+import { Observable } from "rxjs";
+
+export interface IGalleryItem { // these don't show up in the main gallery only expanded views
     title?: string;
     url: string;
     altText: string;
     description?: string;
-    year?: number
+    year?: number;
+    image?: HTMLImageElement;
+    aspectRatio$?: Observable<string>;
+    index?: {
+        section: number;
+        sectionSelf: number;
+        collection: number;
+    }
 }
 
 export interface IGalleryCollectionConfig {
     title: string;
-    additionalItems?: IGallerySubItem[];
+    additionalItems?: IGalleryItem[];
     description?: string;
 }
 
 // items should be sorted by order i want them to appear
 // if they're 2 items in the same collection but I want to display them out
 // no need to overengineer with stuff like order variables
-export interface IGalleryItem {
+export interface IGalleryMainItem extends IGalleryItem{
     title: string;
     name: string;
-    url: string;
-    year?: number;
-    altText: string;
-    description?: string;
     collectionConfig?: IGalleryCollectionConfig; // having this indicates main item
 }
 
 export interface IGallery {
     title: string;
     description: string;
-    items: IGalleryItem[];
+    items: IGalleryMainItem[];
 }
 
 export interface IExpandedGalleryData{
@@ -36,15 +41,15 @@ export interface IExpandedGalleryData{
         title: string;
         description?: string;
     },
-    mainItems: IGalleryItem[],
-    subItems?: IGallerySubItem[]
+    mainItems: IGalleryMainItem[],
+    subItems?: IGalleryItem[]
 }
 
 export interface IGalleryMap {
-    [name: string]: IGalleryItem[];
+    [name: string]: IExpandedGalleryData;
 }
 
 export interface IGallerySelection {
     index: number;
-    item: IGalleryItem;
+    item: IGalleryMainItem;
 }

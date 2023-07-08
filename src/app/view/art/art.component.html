@@ -1,7 +1,11 @@
 <h2 aria-live="assertive">My Art</h2>
 <section class="lx-art__section" *ngFor="let section of art, let i = index">
     <h3 class="lx-art__section-header">{{section.title}}</h3>
-    <app-gallery #galleries [galleryItems]="section.items" (select)="select(i, $event)"></app-gallery>    
+    <app-gallery #galleries 
+        [galleryItems]="section.items"
+        [overrideRouteOnClick]="true"
+        (select)="select(i, $event)"
+    ></app-gallery>    
 </section> 
 <app-gallery-overlay 
     *ngIf="currentItem" 
