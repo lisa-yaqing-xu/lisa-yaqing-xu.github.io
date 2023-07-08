@@ -157,3 +157,31 @@ a {
         } 
     }
 }
+
+.lx-info-button {
+    display: flex;
+    background: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 3px solid var(--lx-light-gray);
+    color: var(--lx-light-gray);
+    width: 28px;
+    height: 28px;
+    &::before{
+        content: 'i';
+        font-size: 1.8rem;
+    }
+    &:hover{
+        border-color: white;
+        color: white;
+    }
+    &:active{
+        border-color: var(--lx-gray);
+        color: var(--lx-gray);
+    }
+}

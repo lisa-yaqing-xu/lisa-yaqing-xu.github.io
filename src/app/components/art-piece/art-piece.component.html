@@ -1,9 +1,8 @@
-<button class="lx-button lx-art-details__individual-display"
+<button class="lx-info-button  lx-art-details__individual-display"
     *ngIf="enableIndividualInfo" aria-label="show individual piece info"
     (click)="toggleInfo($event)"
     (mouseenter)="showInfo = true"
     (mouseleave)="showInfo = false">
-    i
 </button>
 <div *ngIf="enableIndividualInfo" 
     class="lx-art-details__individual-info"

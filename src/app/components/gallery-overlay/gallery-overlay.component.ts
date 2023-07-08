@@ -32,6 +32,7 @@ export class GalleryOverlayComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
+  public showTitle = false;
   private overlayData: OverlayHandler;
 
   constructor(private element: ElementRef, private overlay: OverlayHandlerService) { }
