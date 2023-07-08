@@ -56,9 +56,5 @@ export class ArtService {
   private loadImage(container: IGalleryItem) {
     container.image = new Image();
     container.image.src = container.url;
-    container.aspectRatio$ = of();
-    container.image.onload = () => {
-      container.aspectRatio$ = of(`${container.image.width} / ${container.image.height}`);
-    };
   }
 }

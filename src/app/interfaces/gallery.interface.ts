@@ -7,7 +7,6 @@ export interface IGalleryItem { // these don't show up in the main gallery only 
     description?: string;
     year?: number;
     image?: HTMLImageElement;
-    aspectRatio$?: Observable<string>;
     index?: {
         section: number;
         sectionSelf: number;

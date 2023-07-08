@@ -6,8 +6,7 @@ import { IGalleryMainItem, IGalleryItem } from 'src/app/interfaces/gallery.inter
   templateUrl: './art-piece.component.html',
   styleUrls: ['./art-piece.component.scss']
 })
-export class ArtPieceComponent {
-  @Input() @HostBinding('style.aspect-ratio') aspectRatio;
+export class ArtPieceComponent { 
   @Input() item: IGalleryItem;
   @Input() enableIndividualInfo: boolean = false;
 

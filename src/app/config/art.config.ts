@@ -118,7 +118,7 @@ export const LXGallery: IGallery[] = [
                 altText: 'Buff woman with long black ponytail and chinese style hairpins. she is dressed in an ornate blue fantasy-wuxia style coat with dragon brocade, red fabric under a gold ornate belt, and a large dragon sword with a blue center. She wears light blue guard on her wrist and shins.',
                 url: 'assets/art/design_thyra1.png',
                 year: 2016,
-                description: 'Thyra\'s unarmored design. I opted for a sleeveless look to show off her powerful physique. The scarf is tucked into her collar but it\'s actually quite long.',
+                description: 'This is Thyra\'s unarmored design. I opted for a sleeveless look to show off her powerful physique. The scarf is tucked into her collar but it\'s actually quite long.',
                 collectionConfig: {
                     title: 'Thyra Designs',
                     description: `Thyra, or Long Jianxia, is a character from a collaborative original story between me and a few of my friends. This is her design with and without armor.
@@ -131,16 +131,56 @@ export const LXGallery: IGallery[] = [
                 altText: 'Buff woman with long black ponytail and chinese style hairpins. she is dressed in an ornate blue fantasy-wuxia style coat with dragon brocade under a blue-and-black-armor with some black scales. She has a red sash peaks out under the armor, a scarf that flows back similar to a cape, and a large sword with a dragon hilt and a blue center.',
                 year: 2016,
                 url: 'assets/art/design_thyra2.png',
-                description: 'Thyra\'s armored design. Although most of the clothes are the same under the armor, she does wear a different, simpler sash instead of her more elaborate belt so that it could fit under the armor. Her scarf has also been pulled out to flow akin to a cape.',
+                description: 'This is Thyra\'s armored design. Although most of the clothes are the same under the armor, she does wear a different, simpler sash instead of her more elaborate belt so that it could fit under the armor. Her scarf has also been pulled out to flow akin to a cape.',
             },
             {
-                title: 'Long Xuanjun',
+                title: 'Long Xuanjun Armored/Unarmored',
                 name: 'illustration-essa',
                 altText: 'Very Buff woman with wavy black hair in a ponytail. In her unarmored version she wears a long red coat with dragon brocade, with no shirt and only sarashi around her chest. She has a 6pack and a shallow scar across it. She wears a single dragon head pauldron on her right, white pants, and black boots. Her left arm is heavily tattooed. Her armored version she wears a more ornate headpiece and does put on a shirt under the armor, with the same coat. She wears a black and purple plate set with eastern visuals, and a teal cape.',
                 year: 2016,
                 url: 'assets/art/design_essa.png',
-                description: `Designs for Thyra's daughter in a hypothetical sequel to the project Thyra's from. Xuanjun is strength incarnate, so her design is meant to exemplify that. She inherits the dragon motifs from her mother, as the eldest and the heir.
-                While both her and her brother are originally conceived to share their mother's blue-heavy palette back in 2011 when they were created, I felt red spoke to me more in her later iterations.`
+                collectionConfig: {
+                    title: 'Long Xuanjun',
+                    description: `Designs for Thyra's daughter in a hypothetical sequel to the project Thyra's from. Xuanjun is strength incarnate, so her design is meant to exemplify that. She inherits the dragon motifs from her mother, as the eldest and the heir.
+                    While both her and her brother are originally conceived to share their mother's blue-heavy palette back in 2011 when they were created, I felt red spoke to me more in her later iterations.`,
+                    additionalItems:[
+                        {
+                            url: 'assets/art/design_essa_unarmored_1.png',
+                            altText: 'unarmored breakdown page 1',   
+                            title: 'Unarmored 1'
+                        },
+                        {
+                            url: 'assets/art/design_essa_unarmored_2.png',
+                            altText: 'unarmored breakdown page 2',   
+                            title: 'Unarmored 2'
+                        },
+                        {
+                            url: 'assets/art/design_essa_armored_1.png',
+                            altText: 'armored breakdown page 1',   
+                            title: 'Armored 1'
+                        },
+                        {
+                            url: 'assets/art/design_essa_armored_2.png',
+                            altText: 'armored breakdown page 2',   
+                            title: 'Armored 2'
+                        },
+                        {
+                            url: 'assets/art/design_essa_armored_3.png',
+                            altText: 'armored breakdown page 1',   
+                            title: 'Armored 3'
+                        },
+                        {
+                            url: 'assets/art/design_essa_armored_4.png',
+                            altText: 'armored breakdown page 4',   
+                            title: 'Armored 4'
+                        },
+                        {
+                            url: 'assets/art/design_essa_accessories.png',
+                            altText: 'accessories set',   
+                            title: 'Accessories'
+                        },
+                    ]
+                }
             },
             {
                 title: 'Long Xuanli',

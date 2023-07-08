@@ -29,11 +29,9 @@ $padding-size: 64px;
     padding: 0;
     @include shadow;
 
-    app-art-piece {
+    img {
         max-width: calc(100vw - 2 * #{$padding-size});
         max-height: calc(100vh - 2 * #{$padding-size});
-        width: auto;
-        height: auto;
     }
 }
 
