@@ -1,4 +1,7 @@
-import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  AfterViewInit, Component, ElementRef, EventEmitter, HostBinding,
+  HostListener, Input, OnChanges, OnDestroy, Output, SimpleChanges, ViewChild
+} from '@angular/core';
 import { IGalleryMainItem } from '../../interfaces/gallery.interface';
 import { OverlayHandler, OverlayHandlerService } from '../../services/overlay-handler.service';
 
@@ -7,7 +10,7 @@ import { OverlayHandler, OverlayHandlerService } from '../../services/overlay-ha
   templateUrl: './gallery-overlay.component.html',
   styleUrls: ['./gallery-overlay.component.scss'],
 })
-export class GalleryOverlayComponent implements OnInit, OnDestroy, OnChanges {
+export class GalleryOverlayComponent implements AfterViewInit, OnDestroy, OnChanges {
   @Input() currentItem: IGalleryMainItem;
   @Input() hasPrevious = false;
   @Input() hasNext = false;
@@ -15,6 +18,8 @@ export class GalleryOverlayComponent implements OnInit, OnDestroy, OnChanges {
   @Output() next = new EventEmitter<void>();
   @Output() close = new EventEmitter<void>();
 
+
+  @ViewChild('defaultFocus') defaultFocusElement: ElementRef;
   @HostBinding('class.lx-gallery-overlay') baseClass = true;
   @HostListener('document:keydown.escape') escape() {
     this.close.emit();
@@ -22,25 +27,25 @@ export class GalleryOverlayComponent implements OnInit, OnDestroy, OnChanges {
 
   @HostListener('document:keydown.arrowleft') goPrev() {
     if (this.hasPrevious) {
-      this.prev.emit();
+      this.onGoPrevious();
     }
   }
 
   @HostListener('document:keydown.arrowright') goNext() {
     if (this.hasNext) {
-      this.next.emit();
+      this.onGoNext();
     }
   }
 
-  public showTitle = false;
   private overlayData: OverlayHandler;
 
   constructor(private element: ElementRef, private overlay: OverlayHandlerService) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.overlayData = this.overlay.setup({
       baseElement: this.element,
-      focusTrapElements: [this.element]
+      focusTrapElements: [this.element],
+      focusElement: this.defaultFocusElement.nativeElement
     });
   }
 
@@ -52,5 +57,15 @@ export class GalleryOverlayComponent implements OnInit, OnDestroy, OnChanges {
 
   ngOnDestroy(): void {
     this.overlayData.teardown();
+  }
+
+  onGoPrevious(){
+    this.prev.emit();
+    this.defaultFocusElement.nativeElement.focus();
+  }
+
+  onGoNext(){
+    this.next.emit();
+    this.defaultFocusElement.nativeElement.focus();
   }
 }

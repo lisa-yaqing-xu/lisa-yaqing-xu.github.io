@@ -5,24 +5,27 @@
 <button class="lx-button lx-gallery-overlay__navigation lx-gallery-overlay__prev" 
     *ngIf="hasPrevious"
     aria-label="previous image"
-    (click)="prev.emit()"
+    (click)="onGoPrevious()"
 >
     <i class="lx-icon__arrow" aria-hidden="true"></i>
 </button>
-<div class="lx-gallery-overlay__display">
-    <a [routerLink]="[currentItem.name]" class="lx-button">
-        <img [attr.src]="currentItem.url" [attr.alt]="currentItem.altText" aria-live="assertive">
-    </a>
-    <div class="lx-gallery-overlay__info" (mouseover)="showTitle=true" (mouseleave)="showTitle=false">
-        <a *ngIf="!showTitle" [routerLink]="[currentItem.name]" class="lx-info-button lx-gallery-overlay__info-button" [attr.aria-label]="currentItem.title"></a>
-        <a *ngIf="showTitle" [routerLink]="[currentItem.name]" class="lx-gallery-overlay__info-title">{{currentItem.title}}</a>
+<a 
+    #defaultFocus
+    class="lx-gallery-overlay__display" 
+    [routerLink]="[currentItem.name]"
+    [attr.aria-label]="'go to ' + currentItem.title + ' details'"
+>
+    <img [attr.src]="currentItem.url" [attr.alt]="currentItem.altText" aria-live="assertive">
+    <div class="lx-gallery-overlay__info">
+        <span class="lx-gallery-overlay__info-title">{{currentItem.title}}</span>
+        <span aria-hidden="true" class="lx-info-button lx-gallery-overlay__info-button" [attr.aria-label]="currentItem.title"></span>
     </div>
-</div>
+</a>
 
 <button class="lx-button lx-gallery-overlay__navigation lx-gallery-overlay__next"
     *ngIf="hasNext"
     aria-label="next image"
-    (click)="next.emit()"   
+    (click)="onGoNext()"   
 >
     <i class="lx-icon__arrow" aria-hidden="true"></i>
 </button>
