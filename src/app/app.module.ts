@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,13 +30,14 @@ import { ArtPieceComponent } from './components/art-piece/art-piece.component';
     GalleryComponent,
     GalleryOverlayComponent,
     ArtDetailsComponent,
-    ArtPieceComponent
+    ArtPieceComponent 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HammerModule
   ],
-  providers: [],
+  providers: [ { provide: HAMMER_GESTURE_CONFIG, useClass: HammerGestureConfig, deps: [] }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
