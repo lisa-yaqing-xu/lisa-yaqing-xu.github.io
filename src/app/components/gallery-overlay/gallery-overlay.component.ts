@@ -25,13 +25,18 @@ export class GalleryOverlayComponent implements AfterViewInit, OnDestroy, OnChan
     this.close.emit();
   }
 
-  @HostListener('document:keydown.arrowleft') goPrev() {
+  @HostListener('document:keydown.arrowleft')
+  @HostListener('swipeleft')
+  goPrev()
+   {
     if (this.hasPrevious) {
       this.onGoPrevious();
     }
   }
 
-  @HostListener('document:keydown.arrowright') goNext() {
+  @HostListener('document:keydown.arrowright') 
+  @HostListener('swipeleft')
+  goNext() {
     if (this.hasNext) {
       this.onGoNext();
     }
