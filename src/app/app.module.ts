@@ -15,6 +15,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryOverlayComponent } from './components/gallery-overlay/gallery-overlay.component';
 import { ArtDetailsComponent } from './view/art-details/art-details.component';
 import { ArtPieceComponent } from './components/art-piece/art-piece.component';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
