@@ -26,7 +26,7 @@ export class GalleryOverlayComponent implements AfterViewInit, OnDestroy, OnChan
   }
 
   @HostListener('document:keydown.arrowleft')
-  @HostListener('swipeleft')
+  @HostListener('swiperight')
   goPrev()
    {
     if (this.hasPrevious) {
